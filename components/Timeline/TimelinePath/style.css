@@ -1,0 +1,9 @@
+circle.central{
+    fill: #E3D641;
+    transition: 1s;
+    cursor: default;
+}
+
+circle {
+    cursor: pointer;
+}
