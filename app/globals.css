@@ -10,15 +10,13 @@ body{
   background-image: url(/bgtexture.png);
   background-blend-mode: hard-light;
 }
-
+/* 
 @font-face {
   font-family: 'Chainprinter';
-  src: local('Chainprinter'), url("../assets/Chainprinter/Chainprinter Regular.ttf") format('truetype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+  src: local('Chainprinter'), url("../assets/chainprinter/Chainprinter Regular.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'Windsor';
-  src: local('Windsor'), url("../assets/Windsor/Windsor Light Condensed Regular.otf") format('opentype');
-}
+  src: local('Windsor'), url("../assets/windsor/Windsor Light Condensed Regular.otf") format('opentype');
+} */
