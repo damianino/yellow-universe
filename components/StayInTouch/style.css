@@ -1,0 +1,19 @@
+button :hover path{
+    fill: #E3D641;
+    filter: url(#drop-shadow-yellow);
+}
+
+path{
+    /*transition: 1s;*/
+    transition: all 0.5s ease;
+}
+
+@keyframes btnClick{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}

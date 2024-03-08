@@ -19,9 +19,10 @@ const pathCenterPos = 2445
 interface Props{
     ticksCount: number
     defaultSelected?: number
+    setSelected: (i: number) => void
 }
 
-const TimelinePath = ({ticksCount, defaultSelected}: Props) => {
+const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => {
     const onSwipe = useOnSwipe()
     const createWheelStopListener = useWheelStopListener()
 
@@ -38,7 +39,7 @@ const TimelinePath = ({ticksCount, defaultSelected}: Props) => {
 
         let initTicksData: TickData[] = []
         for (let i = 0; i < ticksCount; i++){
-            const pos = pathRef.current.getTotalLength() / 14 * (i - 1)
+            const pos = 200 * (i - defaultSelected) + pathCenterPos
 
             const p = pathRef.current.getPointAtLength(pos)
 
@@ -47,7 +48,7 @@ const TimelinePath = ({ticksCount, defaultSelected}: Props) => {
                 x: p.x,
                 y: p.y,
 
-                isCentral: false,
+                isCentral: i == defaultSelected,
                 i: i,
             })
 
@@ -164,15 +165,16 @@ const TimelinePath = ({ticksCount, defaultSelected}: Props) => {
 
     const onTickSelect = (i: number) => {
         snapTickToCenter(i)
+        setSelected(i)
     }
 
     return (
         <Wrapper ref={wrapperRef} onWheel={onWheel}>
             <div ref={svgWrapperRef}>
-                <svg style={{width: "100vw", height:"300px"}} viewBox="0 0 1440 207" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg  viewBox="0 0 1440 207" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <defs>
-                            <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
                                 <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#E3D641" floodOpacity="1"/>
                             </filter>
                         </defs>
@@ -191,7 +193,7 @@ const TimelinePath = ({ticksCount, defaultSelected}: Props) => {
                                     fill={td.isCentral ? "#E3D641" : "#333333"}
                                     stroke={td.isCentral ? "" : "#D9D9D9"}
                                     width="10px" height="30px"
-                                    onClick={() => onTickSelect(i)}
+                                    onClick={() => onTickSelect( i)}
                                 />
                             )
                         )}
