@@ -28,7 +28,7 @@ const StayInTouch = () => {
         <>
     <Container>
         <FormWrapper>
-            <span>let's stay in touch</span>
+            <img src="/lets stay in touch.png"/>
             <InputWrapper>
                 <Input placeholder="yellow@universe.com" type={"email"} value={email} onChange={(e) => setEmail(e.target.value)}></Input>
                 <Button rotate={buttonStatus.rotate} success={buttonStatus.success} onClick={onSubmit}>

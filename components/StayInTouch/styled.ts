@@ -17,11 +17,8 @@ export const FormWrapper = styled.div`
         margin-right: 10px;
     }
     
-    & > span {
-        font-family: Windsor,serif;
-        font-size: 48px;
-        color: #E3D641;
-        text-shadow: 0 0 20px #E3D641;
+    & > img {
+       height: 80px;
     }
 
     @media(max-width: 500px){

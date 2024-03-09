@@ -6,7 +6,7 @@ html, body {
 }
 
 body{
-  background-color: #333333;
+  background-color: #000;
   background-image: url(/bgtexture.png);
   background-blend-mode: hard-light;
 }

@@ -12,19 +12,11 @@ export const Container = styled.div`
     }
 `
 
-export const Title = styled.h2`
-    margin: 0;
-    padding: 0;
-    
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    
-    color: #E3D641;
-    font-size: 150px;
-    font-family: "Windsor",serif;
+export const Title = styled.img`
+    width: 150px;
 
     @media(max-width: 500px){
-        font-size: 52px;
+        width: 52px;
     }
 `
 

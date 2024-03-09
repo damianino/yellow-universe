@@ -14,6 +14,10 @@ export const Container = styled.section`
     white-space: pre-wrap;
     text-align: justify;
     font-size: 22px;
+
+    @media (max-width: 500px) {
+        
+    }
 `
 
 export const YellowSquare = styled.div`
@@ -43,19 +47,20 @@ export const LeftCol = styled.div`
     display: flex;
     flex-direction: column;
 
-    & > img {
+    & > :nth-child(1) {
         width: 280px;
         align-self: end;
         margin-bottom: 25px;
     }
 
-    & > h2 {
-        margin: 0;
-        color:  #E3D641;
+    & > :nth-child(2) {
+        width: 600px;
+        align-self: end;
+        margin-right: -80px;
     }
 
     & > p {
-        margin-top: 150px;;
+        margin-top: 100px;;
     }
 `
 

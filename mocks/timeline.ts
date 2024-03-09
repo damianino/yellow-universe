@@ -1,6 +1,7 @@
 export const filmCardsMock = [
     {
         name: "1. CHROMENESIA",
+        titleImg: "chromenesia.png",
         img: "chromenesia.png",
         text: `This short film is the middle of the main character's big story, which you will become a part of after watching.
 
@@ -12,16 +13,19 @@ Could you? Push aside fear and look into the uncomfortable soul of a person?`
     },
     {
         name: "2. CHROMENESIA",
+        titleImg: "chromenesia.png",
         img: "chromenesia.png",
         text: `bla bla`
     },
     {
         name: "3. CHROMENESIA",
+        titleImg: "chromenesia.png",
         img: "chromenesia.png",
         text: `bla bla bla`
     },
     {
         name: "4. CHROMENESIA",
+        titleImg: "chromenesia.png",
         img: "chromenesia.png",
         text: `bla bla bla bla`
     }

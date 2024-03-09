@@ -1,7 +1,7 @@
 "use client"
 
 import { useSchema } from "sanity";
-import { Container, ContentGrid, LeftCol, RelativeWrap, RightCol, TextPart1, YellowSquare } from "./styled";
+import { Container, ContentGrid, LeftCol, RightCol, YellowSquare } from "./styled";
 import { useState } from "react";
 
 const YellowUniverse = () => {
@@ -12,8 +12,7 @@ const YellowUniverse = () => {
             <ContentGrid>
                 <LeftCol>
                     <img src="yellow-universe/1.jpg" />
-                    <h2 style={{fontSize: "128px"}}>YELLOW</h2>
-                    <h2 style={{fontSize: "110px", marginTop: "-20px"}}>UNIVERSE</h2>
+                    <img src="/chrome universe title.png"/>
                     <p>
                     The conflict could not pass without a trace, without leaving scars on the yellow ones. Among them were those who became disillusioned with society and the idea of creation, turning to the path of destruction. The creeping madness has not touched their ingenuity, keen intelligence and sensitivity to reality. This is how the world got the most sophisticated serial killers, financial schemers and brutal rapists.
                     </p>

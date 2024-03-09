@@ -46,11 +46,8 @@ export const TextContainer = styled.div`
     }
 `
 
-export const Title = styled.h3`
-    color: #D8CC40;
-    font-size: 42px;
-
-    font-family: "Windsor", serif;
+export const Title = styled.img`
+    height: 150px;
     
     @media(max-width: 500px) {
         font-size: 28px;

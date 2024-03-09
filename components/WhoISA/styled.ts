@@ -14,32 +14,14 @@ export const Container = styled.section`
     white-space: pre-wrap;
     text-align: justify;
     font-size: 22px;
+
+    margin-bottom: 100px;
 `
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled.img`
     width: 100%;
-
-    color: #E3D641;
-    font-size: 86px;
-
-    display: flex;
-    flex-direction: column;
-
     margin-bottom: -300px;
 
-    & > h2 {
-        margin: 0;
-    }
-
-    & > :nth-child(2) {
-        margin-top: -50px;
-        align-self: center;
-    }
-
-    & > :nth-child(3) {
-        margin-top: -50px;
-        align-self: end;
-    }
 `
 
 export const ContentGrid = styled.div`
@@ -48,7 +30,7 @@ export const ContentGrid = styled.div`
 
     width: 80%;
     display: grid;
-    grid-template-columns: 600px 250px;
+    grid-template-columns: 600px 300px;
     gap: 135px
 `
 
@@ -87,7 +69,7 @@ export const RightCol = styled.div`
     }
 
     & > p {
-        margin: 200px 0 130px 0;
+        margin: 200px 0 0px 0;
     }
 `
 

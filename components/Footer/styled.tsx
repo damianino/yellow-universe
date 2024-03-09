@@ -20,18 +20,16 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     
-    width: 50%;
+    width: 70%;
 
     @media(max-width: 500px){
         width: 80%;
+        & > img {
+            height: 20px;
+        }
     }
     
-    & > span {
-        color: #D9D9D9;
-    }
-
-    & > span > a {
-        color: #E3D641;
-        text-decoration: none;
+    & > img {
+        height: 80px;
     }
 `

@@ -7,9 +7,7 @@ import {ArtifactsMock} from "@/mocks/artifacts";
 const Artifacts = () => {
 
     return (<Container>
-        <Title>
-            A. ARTIFACTS
-        </Title>
+        <Title src="/artifacts.png"/>
         <ArtifactsList>
             {ArtifactsMock.map((i) => (
                 <Artifact

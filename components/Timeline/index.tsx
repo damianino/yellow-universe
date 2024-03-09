@@ -10,7 +10,7 @@ const Timeline = () => {
 
     return(
         <>
-            <Title>{filmCardsMock[selected].name}</Title>
+            <Title src="/chromnesia.png"/>
             <TimelinePath
                 ticksCount={filmCardsMock.length}
                 defaultSelected={0}

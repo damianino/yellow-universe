@@ -7,17 +7,7 @@ const WhoIsA = () => {
 
     return (
         <Container>
-            <TitleContainer>
-                <h2>
-                    WHO
-                </h2>
-                <h2>
-                    IS
-                </h2>
-                <h2>
-                    A?
-                </h2>
-            </TitleContainer>
+            <TitleContainer src="/who is a.png"/>
             <ContentGrid>
                 <LeftCol>
                     <p>
