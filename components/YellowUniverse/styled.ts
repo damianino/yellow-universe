@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    height: 1100px;
     width: 80vw;
+    margin-bottom: 100px;
 
     display: flex;
     justify-content: space-around;
@@ -16,7 +16,10 @@ export const Container = styled.section`
     font-size: 22px;
 
     @media (max-width: 500px) {
-        
+        margin-bottom: 50px;
+        width: 95vw;
+        font-size: 16px;
+        text-align: left;
     }
 `
 
@@ -29,6 +32,12 @@ export const YellowSquare = styled.div`
 
     border: solid 1px #E3D641;
     z-index: 1;
+
+    @media (max-width: 500px) {
+        height: 686px;
+        margin-left: 54px;
+        margin-top: 127px;
+    }
 `
 
 export const ContentGrid = styled.div`
@@ -38,7 +47,14 @@ export const ContentGrid = styled.div`
     width: 80%;
     display: grid;
     grid-template-columns: 52% 40%;
-    gap: 150px
+    gap: 150px;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        grid-template-columns: 100%;
+        gap: 0;
+        grid-row-gap: 20px;
+    }
 `
 
 export const LeftCol = styled.div`
@@ -47,12 +63,16 @@ export const LeftCol = styled.div`
     display: flex;
     flex-direction: column;
 
+    
+
+    // img
     & > :nth-child(1) {
         width: 280px;
         align-self: end;
         margin-bottom: 25px;
     }
 
+    // title
     & > :nth-child(2) {
         width: 600px;
         align-self: end;
@@ -60,7 +80,33 @@ export const LeftCol = styled.div`
     }
 
     & > p {
-        margin-top: 100px;;
+        margin-top: 100px;
+    }
+
+    @media (max-width: 500px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        & > :nth-child(1) {
+            order: 2;
+            align-self: auto;
+            grid-column: 1;
+            width: 40vw;
+            margin-top: 50px;
+        }
+
+        & > :nth-child(2) {
+            grid-column: span 2;
+            order: 1;
+            margin-right: 0;
+            width: 100%;
+        }
+
+        & > p {
+            order: 2;
+            grid-column: 2;
+            margin-top: 0;
+        }
     }
 `
 
@@ -74,10 +120,31 @@ export const RightCol = styled.div`
 
     & > img {
         width: 250px
+
     }
 
     & > p {
         margin: 0 0 130px 0;
+    }
+
+    @media (max-width: 500px){
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        & > img {
+            justify-self: end;
+            grid-column: 2;
+            width: 40vw;
+            margin-top: 50px;
+        }
+
+        & > p {
+            grid-column: 1;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: right;
+        }
     }
 `
 

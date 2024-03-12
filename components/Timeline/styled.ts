@@ -43,6 +43,7 @@ export const TextContainer = styled.div`
 
     @media(max-width: 500px) {
         width: calc(100% - 40px);
+        font-size: 16px;
     }
 `
 
@@ -50,6 +51,8 @@ export const Title = styled.img`
     height: 150px;
     
     @media(max-width: 500px) {
-        font-size: 28px;
+        width: 90%;
+    height: auto;
+}
     }
 `

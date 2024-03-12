@@ -27,10 +27,11 @@ export const FormWrapper = styled.div`
         & > * {
             margin: 0;
         }
-        & > span {
-            font-size: 30px;
-            text-shadow: 0 0 20px #E3D641;
+        & > img {
+            height:43px;   
+            margin-bottom: 10px;;
         }
+
     }
 `
 
@@ -67,7 +68,7 @@ const rotate = keyframes`
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(720deg);
+        transform: rotate(360deg);
     }
 `
 
@@ -75,11 +76,13 @@ const changeFill = (success: boolean) => keyframes`
     0% {
         fill: #E3D641; 
     }
-    20%{
+    50%{
+        fill: ${success ? "forestgreen" : "indianred"}
+    }
+    80%{
         fill: ${success ? "forestgreen" : "indianred"}
     }
     100% {
-        
     }
 `
 

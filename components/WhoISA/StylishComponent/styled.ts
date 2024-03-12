@@ -27,4 +27,20 @@ export const Container = styled.div`
         right: 75px;
         width: 215px;
     }
+
+    @media (max-width: 500px) {
+        width: 90%;
+        height: 200px;
+        margin-left: 0;
+        align-self: flex-end;
+
+        & > img {
+            width: 200px;
+        }
+
+        & > p {
+            font-size: 22px;
+            width: 100px;
+        }
+    }   
 `

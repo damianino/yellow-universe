@@ -5,6 +5,7 @@ export const Container = styled.header`
     margin-bottom: 150px;
     display: flex;
     justify-content: space-between;
+    gap: 70px;
 
     font-family: Windsor,serif;
     color: #E3D641;
@@ -14,8 +15,8 @@ export const Container = styled.header`
     }
 `
 
-export const Title = styled.h1`
-    font-size: 6vw;
+export const Title = styled.img`
+    width: 100%;
     margin-bottom: 0;
 
     @media(max-width: 500px){
@@ -48,17 +49,19 @@ export const ScrollDownContainer = styled.div`
     align-items: end;
     
     & > div {
-        width:200px;
+        height: 140px;
+        margin-bottom: 50px;
         border: #D9D9D9 1px solid;
-        font-size: 16px;
+        font-size: 11px;
         color: #D9D9D9;
         text-align: justify;
         text-align-last: justify;
         font-family: "Roboto Mono",sans-serif;
         font-weight: 200;
 
-        
-    }
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }   
 
     @media(max-width: 500px){
         display: none;

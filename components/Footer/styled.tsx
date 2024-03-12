@@ -22,14 +22,14 @@ export const Wrapper = styled.div`
     
     width: 70%;
 
+    & > img {
+        height: 80px;
+    }
+
     @media(max-width: 500px){
         width: 80%;
         & > img {
-            height: 20px;
+            height: 25px;
         }
-    }
-    
-    & > img {
-        height: 80px;
     }
 `

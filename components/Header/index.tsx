@@ -7,12 +7,10 @@ const  Header = () => {
     return (
         <Container>
             <div>
-                <Title>
-                    WELCOME CHROME
-                </Title>
-                <SubTitle>
-                    first mixed media story
-                </SubTitle>
+                <Title src="/welcome chrome.png"/>
+                {/* <SubTitle>
+                    a mixed media narrative
+                </SubTitle> */}
             </div>
             <ScrollDownContainer>
                 <div>SCROLL DOWN TO UNDERSTAND THE MOVIE<br/></div>

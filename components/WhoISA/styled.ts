@@ -16,12 +16,20 @@ export const Container = styled.section`
     font-size: 22px;
 
     margin-bottom: 100px;
+
+    @media (max-width: 500px) {
+        font-size: 16px;
+        text-align: left;
+    }
 `
 
 export const TitleContainer = styled.img`
     width: 100%;
     margin-bottom: -300px;
 
+    @media (max-width: 500px) {
+        margin-bottom: 0;
+    }
 `
 
 export const ContentGrid = styled.div`
@@ -31,7 +39,13 @@ export const ContentGrid = styled.div`
     width: 80%;
     display: grid;
     grid-template-columns: 600px 300px;
-    gap: 135px
+    gap: 135px;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        grid-template-columns: 100%;
+        gap: 0;
+    }
 `
 
 export const LeftCol = styled.div`
@@ -54,6 +68,23 @@ export const LeftCol = styled.div`
         margin-top: 100px;;
         width: 450px;
     }
+
+    @media (max-width: 500px) {
+        & > img {
+            width: 280px;
+            align-self: end;
+            margin-bottom: 25px;
+        }
+
+        & > :nth-child(1) {
+            margin-top: 20px;;
+        }
+
+        & > :nth-child(3) {
+            margin-top: 20px;;
+            width: 100%;
+        }
+    }
 `
 
 export const RightCol = styled.div`
@@ -64,13 +95,18 @@ export const RightCol = styled.div`
 
     width: inherit;
 
-    & > img {
-        width: 250px
-    }
-
     & > p {
         margin: 200px 0 0px 0;
     }
+
+    @media (max-width: 500px) {
+        grid-column: 1;
+
+        & > p {
+            margin-top: 50px;
+            order:1;
+        }
+    }   
 `
 
 export const PortraitWrapper = styled.div`
@@ -83,6 +119,11 @@ export const PortraitWrapper = styled.div`
     & > span {
         color: #E3D641;
         font-size: 36px;
+    }
+
+    @media (max-width: 500px){
+        width: 70%;
+        align-self: end;
     }
 `
 
@@ -102,5 +143,13 @@ export const ImageBorder = styled.div`
 
     & > img {
         width: 300px;
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+
+        & > img {
+        width: 50%;
+    }
     }
 `
