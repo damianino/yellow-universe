@@ -52,7 +52,6 @@ export const Title = styled.img`
     
     @media(max-width: 500px) {
         width: 90%;
-    height: auto;
-}
+        height: auto;
     }
 `
