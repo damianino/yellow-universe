@@ -11,21 +11,38 @@ export const CardWrapper = styled.div`
         
         flex-direction: column;
     }
+
+
 `
 
 export const ImageContainer = styled.div`
     width: 48%;
+    height: fit-content;
+
+    min-width: 400px;
+    min-height: 400px;
+
     border: #D9D9D9 1px solid;
     padding: 20px;
+    
+    color: #D9D9D9;
+    font-family: chainprinter;
+    font-size: 32px;
 
-    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     & > img {
         width: 100%;
     }
     
     @media(max-width: 500px) {
-        width: calc(100% - 40px);
+        align-self: center;
+        min-width: 300px;
+        min-height: 300px;
+        width:300px;
+        height: 300px;
         margin-bottom: 10px;
     }
 `
@@ -47,11 +64,22 @@ export const TextContainer = styled.div`
     }
 `
 
-export const Title = styled.img`
+export const TitleImg = styled.img`
     height: 150px;
     
     @media(max-width: 500px) {
         width: 90%;
         height: auto;
+    }
+`
+
+export const Title = styled.h1`
+    margin: 50px;
+    font-size: 41px;
+    font-family: Windsor;
+    color: #E3D641;
+    
+    @media(max-width: 500px) {
+        font-size: 72px;
     }
 `

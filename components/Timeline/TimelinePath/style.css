@@ -7,3 +7,9 @@ circle.central{
 circle {
     cursor: pointer;
 }
+
+.svgText {
+    font-family: windsor;
+    font-size: 22px;
+    transform: translate(-5px, 8px);
+}

@@ -183,6 +183,7 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
                     <path ref={pathRef} d="M1540 205C1414.92 205 651.433 205 635.15 205C614.796 205 582.96 198.5 582.96 155C582.96 120.2 617.753 107.167 635.15 105C702.822 105 1268.41 105 1283.86 105C1303.17 105 1337.1 100 1337.1 54C1337.1 17.2 1301.61 4.66667 1283.86 3C1089.37 3 152.399 3 137.786 3C119.519 3 84.5525 3 84.5525 54C84.5525 94.8 120.041 105 137.786 105H278.175C295.571 105.333 330.364 115.8 330.364 155C330.364 194.2 295.571 204.667 278.175 205H-100" stroke="#E3D641" strokeWidth="5" strokeDasharray="15 15"/>
                     <g>
                         {ticksData.map((td, i) => (
+                            <>
                                 <circle
                                     className={td.isCentral ? "central" : ""}
                                     key={i}
@@ -190,11 +191,15 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
                                     ref={(el: SVGCircleElement) => tickRefs.current[i] = el}
                                     r={25} cx={td.x} cy={td.y}
                                     filter={td.isCentral ? "url(#drop-shadow)" : ""}
-                                    fill={td.isCentral ? "#E3D641" : "#333333"}
+                                    fill={td.isCentral ? "#E3D641" : "#000"}
                                     stroke={td.isCentral ? "" : "#D9D9D9"}
                                     width="10px" height="30px"
                                     onClick={() => onTickSelect( i)}
                                 />
+                                
+                                <text className="svgText" x={td.x} y={td.y} fill={td.isCentral ? "#000" : "#D9D9D9"}>{i+1}</text>
+                            
+                            </>
                             )
                         )}
                     </g>

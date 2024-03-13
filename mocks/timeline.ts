@@ -1,7 +1,7 @@
 export const filmCardsMock = [
     {
         name: "1. CHROMENESIA",
-        titleImg: "chromenesia.png",
+        titleImg: "chromnesia.png",
         img: "chromenesia.png",
         text: `This short film is the middle of the main character's big story, which you will become a part of after watching.
 
@@ -9,24 +9,27 @@ He lost his home and loved ones as a child, and later his people were expelled f
 
 But here and now, suffering from constant chills and caustic memories, he will have to trust a frightening stranger. And only after seeing his inner tragedy, he was able to temporarily forget about the nightmares inside himself.
 
-Could you? Push aside fear and look into the uncomfortable soul of a person?`
+Could you? Push aside fear and look into the uncomfortable soul of a person?`,
+        available: true,
     },
     {
         name: "2. CHROMENESIA",
-        titleImg: "chromenesia.png",
+        titleImg: "",
         img: "chromenesia.png",
         text: `bla bla`
     },
     {
         name: "3. CHROMENESIA",
-        titleImg: "chromenesia.png",
+        titleImg: "",
         img: "chromenesia.png",
-        text: `bla bla bla`
+        text: `bla bla bla`,
+        available: false,
     },
     {
         name: "4. CHROMENESIA",
-        titleImg: "chromenesia.png",
+        titleImg: "",
         img: "chromenesia.png",
-        text: `bla bla bla bla`
+        text: `bla bla bla bla`,
+        available: false,
     }
 ]
