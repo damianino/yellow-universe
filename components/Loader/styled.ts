@@ -36,7 +36,7 @@ export const Container = styled.div`
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 
     z-index: 10;
 
@@ -55,6 +55,13 @@ export const Container = styled.div`
         margin-top: -150px;
 
         animation: 4s ${animation} infinite;
+    }
+
+    @media (max-width: 500px) {
+        & > img {
+        height: 100px;
+        margin-top: -50px;
+        }
     }
 `
 
