@@ -17,7 +17,6 @@ const WhoIsA = () => {
         widthRef.current = window.innerWidth
     }, [])
 
-
     return (
         <Container>
             <TitleContainer src="/who is a.png"/>
@@ -33,12 +32,12 @@ const WhoIsA = () => {
                         <span style={{color: "#E3D641", fontSize: "36px"}}>A.</span>
                     </PortraitWrapper>
                     <p>
-                    {1000 < 500 ? textArrRef.current[1] : textArrRef.current[2]}
+                    {widthRef.current < 500 ? textArrRef.current[1] : textArrRef.current[2]}
                     </p>
                 </LeftCol>
                 <RightCol>
                     <p>
-                    {1000 < 500 ? textArrRef.current[2] : textArrRef.current[1]} 
+                    {widthRef.current < 500 ? textArrRef.current[2] : textArrRef.current[1]} 
                     </p>
                     <StylishComponent/>
                 </RightCol>
