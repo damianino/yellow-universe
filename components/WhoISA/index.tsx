@@ -32,12 +32,12 @@ const WhoIsA = () => {
                         <span style={{color: "#E3D641", fontSize: "36px"}}>A.</span>
                     </PortraitWrapper>
                     <p>
-                    {widthRef.current < 500 ? textArrRef.current[1] : textArrRef.current[2]}
+                    {widthRef.current < 500 ? textArrRef.current[2] : textArrRef.current[1]}
                     </p>
                 </LeftCol>
                 <RightCol>
                     <p>
-                    {widthRef.current < 500 ? textArrRef.current[2] : textArrRef.current[1]} 
+                    {widthRef.current < 500 ? textArrRef.current[1] : textArrRef.current[2]} 
                     </p>
                     <StylishComponent/>
                 </RightCol>

@@ -24,8 +24,8 @@ body{
 .display-none{
   animation: anim 1s;
   animation-fill-mode: forwards;
-
-  
+  -webkit-animation-fill-mode: forwards;
+  pointer-events: none;
 }
 @keyframes anim{
   0%{
@@ -34,9 +34,6 @@ body{
   100%{
     opacity: 0;
     display: none;
+    
   }
-}
-
-.visibility-hidden{
-  /* visibility: hidden !important; */
 }

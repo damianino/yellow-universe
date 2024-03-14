@@ -31,10 +31,9 @@ export const ImageContainer = styled.div`
 
     display: flex;
     justify-content: center;
-    align-items: center;
     
-    & > img {
-        width: 100%;
+    & > span {
+        align-self: center;
     }
     
     @media(max-width: 500px) {

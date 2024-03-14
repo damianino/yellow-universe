@@ -34,9 +34,9 @@ export const YellowSquare = styled.div`
     z-index: 1;
 
     @media (max-width: 500px) {
-        height: 686px;
+        height: 600px;
         margin-left: 54px;
-        margin-top: 127px;
+        margin-top: 50px;
     }
 `
 
@@ -96,16 +96,16 @@ export const LeftCol = styled.div`
         }
 
         & > :nth-child(2) {
-            grid-column: span 2;
             order: 1;
             margin-right: 0;
             width: 100%;
         }
 
         & > p {
-            order: 2;
+            order: 1;
+            grid-row: span 2;
             grid-column: 2;
-            margin-top: 0;
+            margin-top: 50px;
         }
     }
 `

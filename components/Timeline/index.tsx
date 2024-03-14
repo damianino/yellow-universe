@@ -5,8 +5,10 @@ import {CardWrapper, ImageContainer, TextContainer, Title, TitleImg} from "@/com
 import {filmCardsMock} from "@/mocks/timeline";
 import {useState} from "react";
 
+const defaultSelected = 8
+
 const Timeline = () => {
-    const [selected, setSelected] = useState(0)
+    const [selected, setSelected] = useState(filmCardsMock.length - defaultSelected - 1 )
 
     return(
         <>
@@ -15,7 +17,7 @@ const Timeline = () => {
            <Title>{filmCardsMock[selected].name}</Title>}
             <TimelinePath
                 ticksCount={filmCardsMock.length}
-                defaultSelected={0}
+                defaultSelected={defaultSelected}
                 setSelected={setSelected}
             />
             <CardWrapper>

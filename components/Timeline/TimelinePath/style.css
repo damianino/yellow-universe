@@ -11,5 +11,11 @@ circle {
 .svgText {
     font-family: windsor;
     font-size: 22px;
-    transform: translate(-5px, 8px);
+    transform-box: fill-box;
+    pointer-events: none;
+    cursor: default;
+
+    @media (max-width: 500px) {
+        font-size: 52px;
+    }
 }

@@ -23,16 +23,23 @@ interface Props{
 }
 
 const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => {
-    const onSwipe = useOnSwipe()
-    const createWheelStopListener = useWheelStopListener()
+    defaultSelected = ticksCount - defaultSelected - 1
+    // const onSwipe = useOnSwipe()
+    // const createWheelStopListener = useWheelStopListener()
 
     const [ticksData, setTicksData] = useState<TickData[]>([])
     const [isSwipeBlocked, setIsSwipeBlocked] = useState(false)
 
+    const screenWidthRef = useRef(0)
+    const ticksDataRef = useRef(ticksData)
     const wrapperRef = useRef<HTMLDivElement>(null)
     const svgWrapperRef = useRef<HTMLDivElement>(null)
     const pathRef = useRef<SVGGeometryElement>(null)
     const tickRefs = useRef<SVGCircleElement[]>([])
+
+    useEffect(() => {
+        screenWidthRef.current = window.innerWidth
+    })
 
     useEffect(() => {
         if (pathRef.current == null) return
@@ -56,39 +63,38 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
         setTicksData(initTicksData)
     }, [pathRef]);
 
-    const removeWheelStopListenerRef = useRef(() => {})
-    const ticksDataRef = useRef(ticksData)
-    useEffect(() => {
-        if (wrapperRef.current == null) return
+    // const removeWheelStopListenerRef = useRef(() => {})
+    // useEffect(() => {
+    //     if (wrapperRef.current == null) return
 
-        removeWheelStopListenerRef.current()
-        removeWheelStopListenerRef.current = createWheelStopListener(wrapperRef.current, snapClosestTickToCenter, 100)
-    }, [wrapperRef]);
+    //     removeWheelStopListenerRef.current()
+    //     removeWheelStopListenerRef.current = createWheelStopListener(wrapperRef.current, snapClosestTickToCenter, 100)
+    // }, [wrapperRef]);
 
-    useEffect(() => {
-        if(svgWrapperRef.current == null){
-            return
-        }
-        onSwipe(svgWrapperRef.current, (deltaX, deltaY) => {
-            if (isSwipeBlocked) return
-            setTicksData((prev) => [...ScrollTimelineBy(prev, deltaX)])
-        },
-            (velocityX: number, velocityY: number) => {
-                velocityX *= -1
-                const intervalId = setInterval(() => {
-                    setTicksData((prev) => [...ScrollTimelineBy(prev, velocityX)])
+    // useEffect(() => {
+    //     if(svgWrapperRef.current == null){
+    //         return
+    //     }
+    //     onSwipe(svgWrapperRef.current, (deltaX, deltaY) => {
+    //         if (isSwipeBlocked) return
+    //         setTicksData((prev) => [...ScrollTimelineBy(prev, deltaX)])
+    //     },
+    //         (velocityX: number, velocityY: number) => {
+    //             velocityX *= -1
+    //             const intervalId = setInterval(() => {
+    //                 setTicksData((prev) => [...ScrollTimelineBy(prev, velocityX)])
 
-                    velocityX *= 0.95;
+    //                 velocityX *= 0.95;
 
-                    if (Math.abs(velocityX) < 0.01) {
-                        snapClosestTickToCenter()
-                        clearInterval(intervalId);
-                    }
-                }, 10);
-            })
-    }, [svgWrapperRef]);
+    //                 if (Math.abs(velocityX) < 0.01) {
+    //                     snapClosestTickToCenter()
+    //                     clearInterval(intervalId);
+    //                 }
+    //             }, 10);
+    //         })
+    // }, [svgWrapperRef]);
 
-    const ScrollTimelineBy = (ticksData: TickData[], offset: number): TickData[] => {
+    const ScrollTimelineBy = useCallback((ticksData: TickData[], offset: number): TickData[] => {
         if (offset == 0) {
             return ticksData
         }
@@ -123,13 +129,13 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
         }
 
         return ticksData
-    }
+    }, [ticksData])
 
     useEffect(() => {
         ticksDataRef.current = ticksData
     }, [ticksData]);
 
-    const snapClosestTickToCenter = () => {
+    const snapClosestTickToCenter = useCallback(() => {
         let closestIndex = 0
         let minD = 9999
         for (let i = 0; i < ticksDataRef.current.length; i++) {
@@ -139,9 +145,9 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
         }
 
         snapTickToCenter(closestIndex)
-    }
+    }, [])
 
-    const snapTickToCenter = (i: number) => {
+    const snapTickToCenter = useCallback((i: number) => {
         setIsSwipeBlocked(true)
 
 
@@ -156,20 +162,20 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
             }
         }, 10)
         return () => clearInterval(interval)
-    }
+    }, [])
 
-    const onWheel = (e: WheelEvent<HTMLDivElement>) => {
-        if(isSwipeBlocked) return
-        setTicksData((prev) => [...ScrollTimelineBy(prev, e.deltaX)])
-    }
+    // const onWheel = (e: WheelEvent<HTMLDivElement>) => {
+    //     if(isSwipeBlocked) return
+    //     setTicksData((prev) => [...ScrollTimelineBy(prev, e.deltaX)])
+    // }
 
-    const onTickSelect = (i: number) => {
+    const onTickSelect = useCallback((i: number) => {
         snapTickToCenter(i)
         setSelected(i)
-    }
+    }, [])
 
     return (
-        <Wrapper ref={wrapperRef} onWheel={onWheel}>
+        <Wrapper ref={wrapperRef} >
             <div ref={svgWrapperRef}>
                 <svg  viewBox="0 0 1440 207" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -189,15 +195,21 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
                                     key={i}
                                     style={{transformBox: "fill-box", transformOrigin: "center"}}
                                     ref={(el: SVGCircleElement) => tickRefs.current[i] = el}
-                                    r={25} cx={td.x} cy={td.y}
+                                    r={screenWidthRef.current > 500 ? 25 : 50} cx={td.x} cy={td.y}
                                     filter={td.isCentral ? "url(#drop-shadow)" : ""}
                                     fill={td.isCentral ? "#E3D641" : "#000"}
                                     stroke={td.isCentral ? "" : "#D9D9D9"}
                                     width="10px" height="30px"
-                                    onClick={() => onTickSelect( i)}
+                                    onClick={isSwipeBlocked ? undefined : () => onTickSelect(i)}
                                 />
                                 
-                                <text className="svgText" x={td.x} y={td.y} fill={td.isCentral ? "#000" : "#D9D9D9"}>{i+1}</text>
+                                <text className="svgText" 
+                                    x={td.x} y={td.y} 
+                                    // x="50%" y="50%"
+                                    fill={td.isCentral ? "#000" : "#D9D9D9"}
+                                    textAnchor="middle"
+                                    dominantBaseline="middle"
+                                    >{ticksData.length-i}</text>
                             
                             </>
                             )
