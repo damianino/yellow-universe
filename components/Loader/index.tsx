@@ -4,7 +4,7 @@ import { Container } from "./styled"
 
 const Loader = () => {
     return (
-        <Container>
+        <Container id="loader">
             <img src="/welcome chrome.png"/>
         </Container>
     )

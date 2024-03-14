@@ -29,7 +29,7 @@ export const FormWrapper = styled.div`
         }
         & > img {
             height:43px;   
-            margin-bottom: 10px;;
+            margin-bottom: 10px;
         }
 
     }
@@ -57,7 +57,7 @@ export const Input = styled.input`
         height: 28px;
         width: 150px;
         
-        font-size: 22px;
+        font-size: 16px;
         padding: 0 15px;
     }
 `

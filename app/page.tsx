@@ -10,17 +10,19 @@ import YellowUniverse from "@/components/YellowUniverse";
 import WhoIsA from "@/components/WhoISA";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
+import { useOnLoadImages } from "@/hooks/useOnLoadImages";
 
 export default function Home() {
-    const [isLoading, setIsLoading] = useState(true)
+    const loaded = useOnLoadImages()
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 6000)
-    }, [])
+        if (!loaded) return
+        document.getElementById("loader")?.classList.add("display-none")
+    }, [loaded])
 
     return (
         <main className={styles.main}>
-            { isLoading? <Loader/> : null}
+            <Loader />
             <Header/>
             <YellowUniverse/>
             <WhoIsA/>

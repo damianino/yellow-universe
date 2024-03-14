@@ -48,8 +48,6 @@ export const Container = styled.div`
 
     background-color: black;
 
-    animation: 7s ${fadeout} normal;
-
     & > img {
         height: 300px;
         margin-top: -150px;

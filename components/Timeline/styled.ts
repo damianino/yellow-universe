@@ -80,6 +80,7 @@ export const Title = styled.h1`
     color: #E3D641;
     
     @media(max-width: 500px) {
-        font-size: 72px;
+        font-size: 38px;
+        margin: 20px;
     }
 `

@@ -12,6 +12,7 @@ export const Container = styled.header`
     
     @media(max-width: 500px){
         width: calc(100% - 10px);
+        margin-bottom: 50px;
     }
 `
 

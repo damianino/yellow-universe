@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
     @media(max-width: 500px){
         width: 80%;
         & > img {
-            height: 25px;
+            height: 28px;
         }
     }
 `

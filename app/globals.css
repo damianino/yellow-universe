@@ -20,3 +20,23 @@ body{
   font-family: 'Windsor';
   src: local('Windsor'), url("../assets/windsor/Windsor Light Condensed Regular.otf") format('opentype');
 } */
+
+.display-none{
+  animation: anim 1s;
+  animation-fill-mode: forwards;
+
+  
+}
+@keyframes anim{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
+}
+
+.visibility-hidden{
+  /* visibility: hidden !important; */
+}

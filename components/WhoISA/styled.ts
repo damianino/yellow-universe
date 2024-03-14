@@ -29,6 +29,8 @@ export const TitleContainer = styled.img`
 
     @media (max-width: 500px) {
         margin-bottom: 0;
+        align-self: center;  
+        width: 100vw;
     }
 `
 
