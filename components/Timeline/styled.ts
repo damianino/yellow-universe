@@ -16,8 +16,8 @@ export const CardWrapper = styled.div`
 `
 
 export const ImageContainer = styled.div`
-    width: 48%;
-    height: fit-content;
+    width: 500px;
+    height: 500px;
 
     min-width: 400px;
     min-height: 400px;
