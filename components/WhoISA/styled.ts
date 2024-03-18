@@ -10,15 +10,15 @@ export const Container = styled.section`
     position: relative;
 
     color: #D9D9D9;
-    font-family: 'Windsor',serif;
+    font-family: 'chainprinter',serif;
     white-space: pre-wrap;
     text-align: justify;
-    font-size: 22px;
+    font-size: 16px;
 
     margin-bottom: 100px;
 
     @media (max-width: 500px) {
-        font-size: 16px;
+        font-size: 12px;
         text-align: left;
     }
 `

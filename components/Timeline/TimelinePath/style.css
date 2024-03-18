@@ -9,8 +9,8 @@ circle {
 }
 
 .svgText {
-    font-family: windsor;
-    font-size: 22px;
+    font-family: chainprinter;
+    font-size: 16px;
     transform-box: fill-box;
     pointer-events: none;
     cursor: default;

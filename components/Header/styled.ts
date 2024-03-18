@@ -7,7 +7,7 @@ export const Container = styled.header`
     justify-content: space-between;
     gap: 70px;
 
-    font-family: Windsor,serif;
+    font-family: chainprinter,serif;
     color: #E3D641;
     
     @media(max-width: 500px){

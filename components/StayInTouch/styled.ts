@@ -48,16 +48,16 @@ export const Input = styled.input`
     border: #D9D9D9 1px solid;
     border-radius: 0;
     
-    font-family: "Windsor",serif;
-    font-size: 28px;
+    font-family: "chainprinter",serif;
+    font-size: 22px;
     color: #d9d9d9;
     padding: 0 15px;
     
     @media(max-width: 500px){
-        height: 28px;
+        height: 22px;
         width: 150px;
         
-        font-size: 16px;
+        font-size: 12px;
         padding: 0 15px;
     }
 `

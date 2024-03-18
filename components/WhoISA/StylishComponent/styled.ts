@@ -39,7 +39,7 @@ export const Container = styled.div`
         }
 
         & > p {
-            font-size: 22px;
+            font-size: 16px;
             width: 100px;
         }
     }   

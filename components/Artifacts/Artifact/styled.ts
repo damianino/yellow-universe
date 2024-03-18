@@ -19,14 +19,14 @@ export const Container = styled.div`
         outline: #D9D9D9 1px solid;
         margin-top: 1px;
         
-        font-family: Windsor,serif;
-        font-size: 22px;
+        font-family: chainprinter,serif;
+        font-size: 16px;
         color:#D9D9D9;
         direction: ltr;
         padding: 0 10px;
 
         @media(max-width: 500px){
-            font-size: 16px;
+            font-size: 12px;
         }
     }
 `

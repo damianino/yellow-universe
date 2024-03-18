@@ -7,12 +7,12 @@ export const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     
-    font-size: 28px;
-    font-family: "Windsor",serif;
+    font-size: 22px;
+    font-family: "chainprinter",serif;
 
     @media(max-width: 500px){
         height: 150px;
-        font-size: 16px;
+        font-size: 12px;
     }
 `
 
@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
     @media(max-width: 500px){
         width: 80%;
         & > img {
-            height: 28px;
+            height: 22px;
         }
     }
 `

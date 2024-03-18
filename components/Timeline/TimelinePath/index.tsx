@@ -209,7 +209,7 @@ const TimelinePath = ({ticksCount, defaultSelected = 0, setSelected}: Props) => 
                                     fill={td.isCentral ? "#000" : "#D9D9D9"}
                                     textAnchor="middle"
                                     dominantBaseline="middle"
-                                    >{ticksData.length-i}</text>
+                                    >{ticksData.length-i == 9 ? ticksData.length-i : "?"}</text>
                             
                             </>
                             )

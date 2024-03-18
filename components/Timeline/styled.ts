@@ -52,14 +52,14 @@ export const TextContainer = styled.div`
     padding-top: 0;
     
     color: #D9D9D9;
-    font-family: 'Windsor',serif;
+    font-family: 'chainprinter',serif;
     white-space: pre-wrap;
     text-align: justify;
-    font-size: 22px;
+    font-size: 16px;
 
     @media(max-width: 500px) {
         width: calc(100% - 40px);
-        font-size: 16px;
+        font-size: 12px;
     }
 `
 
@@ -75,7 +75,7 @@ export const TitleImg = styled.img`
 export const Title = styled.h1`
     margin: 50px;
     font-size: 41px;
-    font-family: Windsor;
+    font-family: chainprinter;
     color: #E3D641;
     
     @media(max-width: 500px) {
