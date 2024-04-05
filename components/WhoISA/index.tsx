@@ -1,14 +1,25 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import StylishComponent from "./StylishComponent";
 import { Container, ContentGrid, ImageBorder, LeftCol, PortraitWrapper, RightCol, TitleContainer } from "./styled";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import "./style.css";
+
+// import required modules
+// @ts-ignore
+import { EffectCards } from "swiper";
 
 const WhoIsA = () => {
     const textArrRef = useRef([
         "The hero of the story is between two poles. His parents carefully protected him from the rough and angular world, but this only delayed his confrontation with reality. When their house burned down under mysterious circumstances, A. was forced to face the world around him in full. At the age of 9, his upbringing was continued by his aunt, his sister on his father’s side.  She was not yellow, she treated them with contempt. There was no exit. Growing up was hard. The balance was fragile.",
         "A. serves as a telescope into reality. He learns and tries to accept the fluctuations of reality. The hero has to learn to accept losses. Home in the local sense, home in the global sense. He is haunted by an identity crisis, pressure from outside and from within.",
-        "“Do I have a place in this world?” - the question that every yellow person asked himself. They are sensitive and observant. Yellows are sent to Earth to create. They are forced to wedge themselves into the dystopian dynamics of the world, where the soil for conflict and destruction is the most fertile. One day they were misunderstood by people. Yellow inventors were considered upstarts, artists - abstract rogues, musicians - mediocre fools. Within one generation, the yellows did not find a common language with people, with rare exceptions. These exceptions keep hope alive to this day. In the future, people often turned to the developments of the yellow ones from the past.",
+        "Later, the already matured protagonist is faced with the forced expulsion of the yellow ones from his native land. He loses touch with his first love. Accustomed to nomadism, the hero experiences a forced separation from his native place, setting off on a journey not of his own free will. He only gradually realizes the longing for his native place and the past. Since those carefree walks with my mother through the forest, the clouds have only thickened. The way home is closed. He, an eternal renegade, will have to adapt to a new place. This is the story of his first interaction with the new reality after vacuum deportation. This is the beginning of a “make you or break you” experience."    
     ])
 
     const widthRef = useRef(0)
@@ -25,12 +36,8 @@ const WhoIsA = () => {
                     <p>
                         {textArrRef.current[0]}
                     </p>
-                    <PortraitWrapper style={{display: "flex", flexDirection: "column", justifyContent:"center"}}>
-                        <ImageBorder>
-                            <img src="whoisa/1.jpg" />
-                        </ImageBorder>
-                        <span style={{color: "#E3D641", fontSize: "36px"}}>A.</span>
-                    </PortraitWrapper>
+                    
+                    <img src="whoisa/1.jpg" />
                     <p>
                     {widthRef.current < 500 ? textArrRef.current[2] : textArrRef.current[1]}
                     </p>
@@ -39,7 +46,20 @@ const WhoIsA = () => {
                     <p>
                     {widthRef.current < 500 ? textArrRef.current[1] : textArrRef.current[2]} 
                     </p>
-                    <StylishComponent/>
+                    <Swiper
+                        effect={"cards"}
+                        grabCursor={true}
+                        modules={[EffectCards]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src="whoisa/carousel/1.jpeg" /></SwiperSlide>
+                        <SwiperSlide><img src="whoisa/carousel/2.jpeg" /></SwiperSlide>
+                        <SwiperSlide><img src="whoisa/carousel/3.jpeg" /></SwiperSlide>
+                        <SwiperSlide><img src="whoisa/carousel/4.jpeg" /></SwiperSlide>
+                        <SwiperSlide><img src="whoisa/carousel/5.jpeg" /></SwiperSlide>
+                        
+                    </Swiper>
+                    
                 </RightCol>
             </ContentGrid>
         </Container>

@@ -46,6 +46,48 @@ But here and now, suffering from constant chills and caustic memories, he will h
 
 Could you? Push aside fear and look into the uncomfortable soul of a person?`,
         available: true,
+        credits: `CAST
+Yellow: Artyom Shalak
+Stranger: Giorgi Kurashvili 
+
+TEAM
+
+LOADLOUD PRODUCTION
+
+Director: Artyom Shalak
+Second director: Felix Oganov
+Director of photography: Mikhail Denisov
+
+General producer: Artem Shtern, Felix Oganov
+Creative producer: Felix Oganov 
+Line producer: Kira Arysheva
+
+1ST ASSITANT CAMERA: 
+Danya Byakov
+Peter Babitsky
+
+Production designer: Melania Zheleznova 
+Assistant production designer: Sofia Soboleva
+
+Gaffer: Irakly Vasilkovsky
+
+Lighter: Peter Babitsky
+Key Grip: Peter Pankratov
+
+Editor: Daniel Komarov
+Colorist: Mikhail Denisov 
+Sound producer: Artem Shtern
+
+AI Footage: Olga Barabanova
+VFX Group Head: Alexey Garny
+VFX Artist: Maxim Yasinsky
+
+VFX Compositing Artist: Alexandr Hirschbein
+VFX Background Artist: Mikhail Miroshnichenko
+CGI Specialist: Mikhail Semenov
+
+Titles Design: Acid Topser
+Titles Animation: Maxim Yasinsky`
     },
     {
         name: "8. CHROMENESIA",

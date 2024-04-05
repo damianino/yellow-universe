@@ -1,14 +1,33 @@
 "use client";
 
 import TimelinePath from "@/components/Timeline/TimelinePath";
-import {CardWrapper, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
+import {CardWrapper, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
 import {filmCardsMock} from "@/mocks/timeline";
 import {useState} from "react";
+import Modal from 'react-modal';
 
 const defaultSelected = 8
 
+const modalStyle = {
+    content: {
+    backgroundColor: "black",
+    color: "white",
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      textAlign: "center"
+    },
+    overlay: {
+        backgroundColor: "#000000c3",
+    }
+  };
+
 const Timeline = () => {
     const [selected, setSelected] = useState(filmCardsMock.length - defaultSelected - 1 )
+    const [modalOpen, setModalOpen] = useState(false)
 
     return(
         <>
@@ -30,8 +49,25 @@ const Timeline = () => {
                 {filmCardsMock[selected].available ? 
                     filmCardsMock[selected].text :
                     "Coming soon..."}
+                    {filmCardsMock[selected].available ? 
+                    <div style={{marginTop: "20px"}}>
+                <CreditsBtn onClick={() => setModalOpen(true)}>
+                    CREDITS
+                </CreditsBtn></div> : null}
                 </TextContainer>
+                
             </CardWrapper>
+            <Modal
+                isOpen={modalOpen}
+                // @ts-ignore
+                style={modalStyle}
+                contentLabel="Example Modal"
+                onRequestClose={() => setModalOpen(false)}
+            >
+                <Credits>
+                    {filmCardsMock[selected].credits}
+                </Credits>
+            </Modal>
         </>
     )
 }

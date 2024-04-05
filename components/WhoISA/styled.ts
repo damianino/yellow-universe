@@ -10,10 +10,10 @@ export const Container = styled.section`
     position: relative;
 
     color: #D9D9D9;
-    font-family: 'chainprinter',serif;
+    font-family: "Bookman Old Style", Georgia, serif;
     white-space: pre-wrap;
     text-align: justify;
-    font-size: 16px;
+    font-size: 14px;
 
     margin-bottom: 100px;
 
@@ -38,9 +38,9 @@ export const ContentGrid = styled.div`
     position: relative;
     z-index: 2;
 
-    width: 80%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 600px 300px;
+    grid-template-columns: 40% 30%;
     gap: 135px;
 
     @media (max-width: 500px) {
@@ -57,9 +57,9 @@ export const LeftCol = styled.div`
     flex-direction: column;
 
     & > img {
-        width: 280px;
-        align-self: end;
-        margin-bottom: 25px;
+        width: 400px;
+        align-self: center;
+        margin-bottom: 15px;
     }
 
     & > :nth-child(1) {
@@ -67,7 +67,6 @@ export const LeftCol = styled.div`
     }
 
     & > :nth-child(3) {
-        margin-top: 100px;;
         width: 450px;
     }
 
@@ -98,7 +97,13 @@ export const RightCol = styled.div`
     width: inherit;
 
     & > p {
-        margin: 200px 0 0px 0;
+        margin: 250px 0 100px 0;
+    }
+
+    & > div> div> div>img {
+        width: 400px;
+        align-self: center;
+        margin-bottom: 25px;
     }
 
     @media (max-width: 500px) {

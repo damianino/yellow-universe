@@ -48,7 +48,7 @@ export const Input = styled.input`
     border: #D9D9D9 1px solid;
     border-radius: 0;
     
-    font-family: "chainprinter",serif;
+    font-family: "Bookman Old Style", Georgia, serif;
     font-size: 22px;
     color: #d9d9d9;
     padding: 0 15px;

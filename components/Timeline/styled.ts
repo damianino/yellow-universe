@@ -26,7 +26,7 @@ export const ImageContainer = styled.div`
     padding: 20px;
     
     color: #D9D9D9;
-    font-family: chainprinter;
+    font-family: "Bookman Old Style", Georgia, serif;
     font-size: 32px;
 
     display: flex;
@@ -52,7 +52,7 @@ export const TextContainer = styled.div`
     padding-top: 0;
     
     color: #D9D9D9;
-    font-family: 'chainprinter',serif;
+    font-family: "Bookman Old Style", Georgia, serif;
     white-space: pre-wrap;
     text-align: justify;
     font-size: 16px;
@@ -75,11 +75,27 @@ export const TitleImg = styled.img`
 export const Title = styled.h1`
     margin: 50px;
     font-size: 41px;
-    font-family: chainprinter;
+    font-family: "Bookman Old Style", Georgia, serif;;
     color: #E3D641;
     
     @media(max-width: 500px) {
         font-size: 38px;
         margin: 20px;
     }
+`
+
+export const Credits = styled.text`
+    font-family: "Bookman Old Style", Georgia, serif;
+    white-space: pre-wrap;
+    text-align: justify;
+`
+
+export const CreditsBtn = styled.text`
+    font-family: "Bookman Old Style", Georgia, serif;
+    white-space: pre-wrap;
+    text-align: justify;
+    background-color: none;
+    border: white 1px solid;
+    outline: none;
+    padding: 5px 10px;
 `

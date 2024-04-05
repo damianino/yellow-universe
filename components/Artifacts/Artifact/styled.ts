@@ -19,7 +19,7 @@ export const Container = styled.div`
         outline: #D9D9D9 1px solid;
         margin-top: 1px;
         
-        font-family: chainprinter,serif;
+        font-family: "Bookman Old Style", Georgia, serif;
         font-size: 16px;
         color:#D9D9D9;
         direction: ltr;

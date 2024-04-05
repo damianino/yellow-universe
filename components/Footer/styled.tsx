@@ -8,7 +8,7 @@ export const Container = styled.div`
     align-items: center;
     
     font-size: 22px;
-    font-family: "chainprinter",serif;
+    font-family: "Bookman Old Style", Georgia, serif;
 
     @media(max-width: 500px){
         height: 150px;

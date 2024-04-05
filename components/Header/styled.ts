@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: calc(100% - 400px);
-    margin-bottom: 150px;
     display: flex;
     justify-content: space-between;
     gap: 70px;
 
-    font-family: chainprinter,serif;
+    font-family: "Bookman Old Style", Georgia, serif;;
     color: #E3D641;
     
     @media(max-width: 500px){
@@ -28,7 +27,7 @@ export const Title = styled.img`
 `
 
 export const SubTitle = styled.h2`
-    font-family: Chainprinter,serif;
+    font-family: "Bookman Old Style", Georgia, serif;;
 
 
     font-size: 1.7vw;
