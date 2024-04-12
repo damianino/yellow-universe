@@ -28,7 +28,7 @@ export default function Home() {
             <WhoIsA/>
             <Timeline/>
             <StayInTouch/>
-            <Artifacts/>
+            {/* <Artifacts/> */}
             <Footer/>
         </main>
     );

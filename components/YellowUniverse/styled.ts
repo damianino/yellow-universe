@@ -20,6 +20,10 @@ export const Container = styled.section`
         max-width: 100%
     }
 
+    & > p {
+        margin: 0;
+    }
+
     @media (max-width: 500px) {
         margin-bottom: 50px;
         width: 95vw;

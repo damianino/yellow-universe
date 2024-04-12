@@ -21,16 +21,13 @@ export const ImageContainer = styled.div`
 
     min-width: 400px;
     min-height: 400px;
-
-    border: #D9D9D9 1px solid;
-    padding: 20px;
     
     color: #D9D9D9;
     font-family: "Bookman Old Style", Georgia, serif;
     font-size: 32px;
 
     display: flex;
-    justify-content: center;
+    justify-content: end;
     
     & > span {
         align-self: center;
@@ -43,6 +40,7 @@ export const ImageContainer = styled.div`
         width:300px;
         height: 300px;
         margin-bottom: 10px;
+        justify-content: center;
     }
 `
 
@@ -84,10 +82,11 @@ export const Title = styled.h1`
     }
 `
 
-export const Credits = styled.text`
+export const Credits = styled.p`
     font-family: "Bookman Old Style", Georgia, serif;
     white-space: pre-wrap;
     text-align: justify;
+    overflow: scroll;
 `
 
 export const CreditsBtn = styled.text`

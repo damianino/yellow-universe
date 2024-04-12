@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
 
     & > img {
         height: 80px;
+        cursor: pointer;
     }
 
     @media(max-width: 500px){

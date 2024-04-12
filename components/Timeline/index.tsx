@@ -2,8 +2,9 @@
 
 import TimelinePath from "@/components/Timeline/TimelinePath";
 import {CardWrapper, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
+import useTextRandomFadeIn from "@/hooks/sfx/textRandomFadein";
 import {filmCardsMock} from "@/mocks/timeline";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import Modal from 'react-modal';
 
 const defaultSelected = 8
@@ -26,6 +27,9 @@ const modalStyle = {
   };
 
 const Timeline = () => {
+    const textContainerRef = useRef(null)
+    // const text = useTextRandomFadeIn(textContainerRef)
+
     const [selected, setSelected] = useState(filmCardsMock.length - defaultSelected - 1 )
     const [modalOpen, setModalOpen] = useState(false)
 
@@ -64,7 +68,7 @@ const Timeline = () => {
                 contentLabel="Example Modal"
                 onRequestClose={() => setModalOpen(false)}
             >
-                <Credits>
+                <Credits ref={textContainerRef}>
                     {filmCardsMock[selected].credits}
                 </Credits>
             </Modal>

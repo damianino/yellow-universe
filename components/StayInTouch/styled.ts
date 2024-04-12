@@ -14,7 +14,7 @@ export const FormWrapper = styled.div`
     align-items: center;
     
     & > * {
-        margin-right: 10px;
+        margin-right: 40px;
     }
     
     & > img {
@@ -109,12 +109,12 @@ export const Button = styled.button<{ rotate: boolean, success: boolean }>`
     }
     
     @media(max-width: 500px){
-        height: 30px;
-        width: 30px;
+        height: 24px;
+        width: 24px;
         margin-left: -1px;
         & > svg{
-            height: 30px;
-            width: 30px;
+            height: 24px;
+            width: 24px;
         }
     }
 `

@@ -11,13 +11,12 @@ export const Container = styled.header`
     
     @media(max-width: 500px){
         width: calc(100% - 10px);
-        margin-bottom: 50px;
     }
 `
 
 export const Title = styled.img`
     width: 100%;
-    margin-bottom: 0;
+    margin: 100px 0 80px 0;
 
     @media(max-width: 500px){
         width: calc(100vw - 10px);
