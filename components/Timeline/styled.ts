@@ -98,3 +98,9 @@ export const CreditsBtn = styled.text`
     outline: none;
     padding: 5px 10px;
 `
+
+export const CloseModalBtn = styled.img`
+    width: 15px;
+    float: right;
+    margin-top: -30px
+`

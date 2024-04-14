@@ -28,6 +28,17 @@ export const Container = styled.section`
         margin-bottom: 50px;
         width: 95vw;
         font-size: 12px;
-        text-align: left;
+
+        & > img {
+            grid-row: 1;
+            height: 50px;
+            margin: auto;
+        }
+
+        & > p {
+            grid-row: 2;
+            grid-column: span 2;
+            margin: 0 50px;
+        }
     }
 `

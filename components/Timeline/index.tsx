@@ -1,17 +1,22 @@
 "use client";
 
 import TimelinePath from "@/components/Timeline/TimelinePath";
-import {CardWrapper, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
-import useTextRandomFadeIn from "@/hooks/sfx/textRandomFadein";
+import {CardWrapper, CloseModalBtn, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
 import {filmCardsMock} from "@/mocks/timeline";
 import {useRef, useState} from "react";
 import Modal from 'react-modal';
+import FadeText from "../FadeText";
+
+import "./style.css"
+import { Swiper } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 
 const defaultSelected = 8
 
 const modalStyle = {
     content: {
-    backgroundColor: "black",
+    backgroundColor: "transparent",
+    border: "none",
     color: "white",
       top: '50%',
       left: '50%',
@@ -19,19 +24,20 @@ const modalStyle = {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      textAlign: "center"
+      textAlign: "center",
+      paddingTop: "50px", 
+      transition: "1s",
+      overflow: "scroll"
     },
     overlay: {
-        backgroundColor: "#000000c3",
+        backgroundColor: "#000000dc",
     }
   };
 
 const Timeline = () => {
-    const textContainerRef = useRef(null)
-    // const text = useTextRandomFadeIn(textContainerRef)
-
     const [selected, setSelected] = useState(filmCardsMock.length - defaultSelected - 1 )
     const [modalOpen, setModalOpen] = useState(false)
+    const [creditsTextVisible, setCreditsTextVisible] = useState(false)
 
     return(
         <>
@@ -45,9 +51,24 @@ const Timeline = () => {
             />
             <CardWrapper>
                 <ImageContainer>
+                <Swiper
+                loop={true}
+                    slidesPerView={1}
+                    style={{margin: "0"}}
+                    autoplay={{
+                        delay: 3000
+                    }}
+                >
                     {filmCardsMock[selected].available ? 
-                    (<img src={filmCardsMock[selected].img}/>) :
+                    filmCardsMock[selected].img.map((src) => (
+                        <SwiperSlide>
+                            <img width={"100%"} src={src}/>
+                        </SwiperSlide>
+                        )
+                        ) :
                     (<span>?</span>)}
+                </Swiper>
+                    
                 </ImageContainer>
                 <TextContainer>
                 {filmCardsMock[selected].available ? 
@@ -55,7 +76,10 @@ const Timeline = () => {
                     "Coming soon..."}
                     {filmCardsMock[selected].available ? 
                     <div style={{marginTop: "20px"}}>
-                <CreditsBtn onClick={() => setModalOpen(true)}>
+                <CreditsBtn onClick={() => {
+                    setModalOpen(true)
+                    setTimeout(() => setCreditsTextVisible(true))
+                }}>
                     CREDITS
                 </CreditsBtn></div> : null}
                 </TextContainer>
@@ -66,11 +90,16 @@ const Timeline = () => {
                 // @ts-ignore
                 style={modalStyle}
                 contentLabel="Example Modal"
-                onRequestClose={() => setModalOpen(false)}
-            >
-                <Credits ref={textContainerRef}>
-                    {filmCardsMock[selected].credits}
-                </Credits>
+                onRequestClose={() => {
+                    setCreditsTextVisible(false)
+                    setModalOpen(false)
+                }}
+            >   
+                <CloseModalBtn src="close-btn.png" onClick={() => {
+                    setCreditsTextVisible(false)
+                    setModalOpen(false)
+                }}/>
+                <FadeText text={filmCardsMock[selected].credits || ""} visible={creditsTextVisible}/>
             </Modal>
         </>
     )
