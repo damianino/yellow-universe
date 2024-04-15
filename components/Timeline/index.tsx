@@ -1,38 +1,17 @@
 "use client";
 
 import TimelinePath from "@/components/Timeline/TimelinePath";
-import {CardWrapper, CloseModalBtn, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
+import {CardWrapper, Credits, CreditsBtn, ImageContainer, TextContainer, Title, TitleImg} from "@/components/Timeline/styled";
 import {filmCardsMock} from "@/mocks/timeline";
 import {useRef, useState} from "react";
-import Modal from 'react-modal';
 import FadeText from "../FadeText";
 
 import "./style.css"
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
+import Modal from "../Modal";
 
 const defaultSelected = 8
-
-const modalStyle = {
-    content: {
-    backgroundColor: "transparent",
-    border: "none",
-    color: "white",
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      textAlign: "center",
-      paddingTop: "50px", 
-      transition: "1s",
-      overflow: "scroll"
-    },
-    overlay: {
-        backgroundColor: "#000000dc",
-    }
-  };
 
 const Timeline = () => {
     const [selected, setSelected] = useState(filmCardsMock.length - defaultSelected - 1 )
@@ -78,7 +57,7 @@ const Timeline = () => {
                     <div style={{marginTop: "20px"}}>
                 <CreditsBtn onClick={() => {
                     setModalOpen(true)
-                    setTimeout(() => setCreditsTextVisible(true))
+                    setCreditsTextVisible(true)
                 }}>
                     CREDITS
                 </CreditsBtn></div> : null}
@@ -87,18 +66,11 @@ const Timeline = () => {
             </CardWrapper>
             <Modal
                 isOpen={modalOpen}
-                // @ts-ignore
-                style={modalStyle}
-                contentLabel="Example Modal"
-                onRequestClose={() => {
-                    setCreditsTextVisible(false)
+                onClose={() => {
                     setModalOpen(false)
+                    setCreditsTextVisible(false)
                 }}
             >   
-                <CloseModalBtn src="close-btn.png" onClick={() => {
-                    setCreditsTextVisible(false)
-                    setModalOpen(false)
-                }}/>
                 <FadeText text={filmCardsMock[selected].credits || ""} visible={creditsTextVisible}/>
             </Modal>
         </>

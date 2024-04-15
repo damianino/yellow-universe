@@ -17,10 +17,8 @@ export const CardWrapper = styled.div`
 
 export const ImageContainer = styled.div`
     width: 500px;
-    height: 500px;
 
     min-width: 400px;
-    min-height: 400px;
     
     color: #D9D9D9;
     font-family: "Bookman Old Style", Georgia, serif;
@@ -36,9 +34,7 @@ export const ImageContainer = styled.div`
     @media(max-width: 500px) {
         align-self: center;
         min-width: 300px;
-        min-height: 300px;
         width:300px;
-        height: 300px;
         margin-bottom: 10px;
         justify-content: center;
     }
@@ -97,10 +93,4 @@ export const CreditsBtn = styled.text`
     border: white 1px solid;
     outline: none;
     padding: 5px 10px;
-`
-
-export const CloseModalBtn = styled.img`
-    width: 15px;
-    float: right;
-    margin-top: -30px
 `

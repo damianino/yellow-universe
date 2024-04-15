@@ -12,8 +12,6 @@ import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 import { useOnLoadImages } from "@/hooks/useOnLoadImages";
 import Modal from 'react-modal';
-import { CloseModalBtn } from "@/components/Timeline/styled";
-
 
 const modalStyle = {
     content: {
@@ -35,14 +33,11 @@ const modalStyle = {
     overlay: {
         backgroundColor: "#000000dc",
         zIndex: 1111
-
     }
   };
 
 export default function Home() {
     const loaded = useOnLoadImages()
-    const [modalOpen, setModalOpen] = useState(false)
-    const [selectedImg, setSelectedImg] = useState("")
 
     useEffect(() => {
         if (!loaded) return
@@ -51,20 +46,6 @@ export default function Home() {
     
     return (
         <main className={styles.main}>
-            <Modal
-                isOpen={modalOpen}
-                // @ts-ignore
-                style={modalStyle}
-                contentLabel="Example Modal"
-                onRequestClose={() => {
-                    setModalOpen(false)
-                }}
-            >   
-                <CloseModalBtn src="close-btn.png" onClick={() => {
-                    setModalOpen(false)
-                }}/>
-                    <img width={"80%"} style={{}} src={selectedImg}></img>
-            </Modal>
             <Loader />
             <Header/>
             <YellowUniverse/>

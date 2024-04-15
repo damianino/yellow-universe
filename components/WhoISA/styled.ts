@@ -73,12 +73,12 @@ export const LeftCol = styled.div`
     @media (max-width: 500px) {
         & > img {
             width: 280px;
-            align-self: end;
-            margin-bottom: 25px;
+            align-self: center;
+            margin: 20px 0 0 0;
         }
 
         & > :nth-child(1) {
-            margin-top: 20px;;
+            margin: 0;
         }
 
         & > :nth-child(3) {
@@ -103,7 +103,7 @@ export const RightCol = styled.div`
     & > div> div> div>img {
         width: 400px;
         align-self: center;
-        margin-bottom: 25px;
+        margin-top: 50px;
     }
 
     @media (max-width: 500px) {
