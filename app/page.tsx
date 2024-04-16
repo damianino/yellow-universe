@@ -11,7 +11,7 @@ import WhoIsA from "@/components/WhoISA";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 import { useOnLoadImages } from "@/hooks/useOnLoadImages";
-import Modal from 'react-modal';
+import Modal from "@/components/Modal";
 
 const modalStyle = {
     content: {
@@ -38,10 +38,18 @@ const modalStyle = {
 
 export default function Home() {
     const loaded = useOnLoadImages()
+    const [modalOpen, setModalOpen] = useState(false) 
+    const [imgSrc, setImgSrc] = useState("")
 
     useEffect(() => {
         if (!loaded) return
         document.getElementById("loader")?.classList.add("display-none")
+        Array.from(document.querySelectorAll<HTMLImageElement>(".openableImg")).forEach((img) => {
+            img.addEventListener("click", (e) => {
+                setModalOpen(true)
+                setImgSrc(img.src)
+            })
+        })
     }, [loaded])
     
     return (
@@ -55,7 +63,12 @@ export default function Home() {
             {/* <Artifacts/> */}
             <Footer/>
 
-            
+            <Modal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+            >
+                <img src={imgSrc}/>
+            </Modal>
         </main>
     );
 }

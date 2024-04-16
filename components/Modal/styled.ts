@@ -23,6 +23,7 @@ export const Container = styled.div`
     width: fit-content;
     height: 80vh;
     padding: 50px;
+    display: flex;
     
     position: relative;
     top: 50%;
@@ -34,10 +35,18 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     overflow: auto;
+
+    display: flex;
+
+    & > img{
+        height: 70vh;
+        align-self: center;
+    }
 `
 
 export const CloseModalBtn = styled.img`
+position: absolute;
     width: 15px;
-    float: right;
+    right: 50px;
     margin-top: -30px
 `

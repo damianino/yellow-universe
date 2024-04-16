@@ -41,7 +41,7 @@ const Timeline = () => {
                     {filmCardsMock[selected].available ? 
                     filmCardsMock[selected].img.map((src) => (
                         <SwiperSlide>
-                            <img width={"100%"} src={src}/>
+                            <img style={{cursor: "pointer"}} className="openableImg" width={"100%"} src={src}/>
                         </SwiperSlide>
                         )
                         ) :

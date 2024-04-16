@@ -51,12 +51,12 @@ const WhoIsA = () => {
                         grabCursor={true}
                         modules={[EffectCards]}
                         className="mySwiper"
+                        loop={true}
+                        
                     >
-                        <SwiperSlide><img src="whoisa/carousel/1.jpeg" /></SwiperSlide>
-                        <SwiperSlide><img src="whoisa/carousel/2.jpeg" /></SwiperSlide>
-                        <SwiperSlide><img src="whoisa/carousel/3.jpeg" /></SwiperSlide>
-                        <SwiperSlide><img src="whoisa/carousel/4.jpeg" /></SwiperSlide>
-                        <SwiperSlide><img src="whoisa/carousel/5.jpeg" /></SwiperSlide>
+                        {Array(6).fill(0).map((e, i) => (
+                            <SwiperSlide><img style={{cursor: "pointer"}} className="openableImg" src={`whoisa/carousel/${i+1}.jpeg`} /></SwiperSlide>
+                        ))}
                         
                     </Swiper>
                     
