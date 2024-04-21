@@ -32,6 +32,8 @@ const Timeline = () => {
             />
             <CardWrapper>
                 <ImageContainer>
+                {filmCardsMock[selected].available ? 
+                    (<>
                     <Swiper
                     className="customSwiper"
                     modules={[Navigation]}
@@ -45,17 +47,15 @@ const Timeline = () => {
                         prevEl: '.arrowL',
                     }}
                     >
-                        {filmCardsMock[selected].available ? 
-                        filmCardsMock[selected].img.map((src) => (
+                        {filmCardsMock[selected].img.map((src) => (
                             <SwiperSlide>
                                 <img style={{cursor: "pointer"}} className="openableImg" width={"100%"} src={src}/>
                             </SwiperSlide>
                             )
-                            ) :
-                        (<span>?</span>)}
+                            ) 
+                            }
                     </Swiper>
-                    {filmCardsMock[selected].available ? 
-                    (<div style={{    
+                    <div style={{    
                         display: "flex",
                         justifyContent: "space-between",
                         width: "350px",
@@ -64,7 +64,9 @@ const Timeline = () => {
                         top: "223px"}}>
                         <img style={{cursor: "pointer"}} className="arrowL" src="arrow-l.png" width={76}/>
                         <img style={{cursor: "pointer"}} className="arrowR" src="arrow-r.png" width={84}/>
-                    </div>) : null }
+                    </div>
+                    </>) :
+                        (<div style={{height: "330px", width: "330px", display: "flex", alignItems: "center", justifyContent: "center"}}><span>?</span></div>) }
                 </ImageContainer>
                 <TextContainer>
                 {filmCardsMock[selected].available ? 
