@@ -54,7 +54,8 @@ const Timeline = () => {
                             ) :
                         (<span>?</span>)}
                     </Swiper>
-                    <div style={{    
+                    {filmCardsMock[selected].available ? 
+                    (<div style={{    
                         display: "flex",
                         justifyContent: "space-between",
                         width: "350px",
@@ -63,7 +64,7 @@ const Timeline = () => {
                         top: "223px"}}>
                         <img style={{cursor: "pointer"}} className="arrowL" src="arrow-l.png" width={76}/>
                         <img style={{cursor: "pointer"}} className="arrowR" src="arrow-r.png" width={84}/>
-                    </div>
+                    </div>) : null }
                 </ImageContainer>
                 <TextContainer>
                 {filmCardsMock[selected].available ? 
