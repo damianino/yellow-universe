@@ -7,8 +7,10 @@ import {useRef, useState} from "react";
 import FadeText from "../FadeText";
 
 import "./style.css"
-import { Swiper } from "swiper/react";
-import { SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+
 import Modal from "../Modal";
 
 const defaultSelected = 8
@@ -30,24 +32,38 @@ const Timeline = () => {
             />
             <CardWrapper>
                 <ImageContainer>
-                <Swiper
-                loop={true}
-                    slidesPerView={1}
-                    style={{margin: "0"}}
-                    autoplay={{
-                        delay: 3000
+                    <Swiper
+                    className="customSwiper"
+                    modules={[Navigation]}
+                    loop={true}
+                        slidesPerView={1}
+                        autoplay={{
+                            delay: 3000
+                        }}
+                    navigation={{
+                        nextEl: '.arrowR',
+                        prevEl: '.arrowL',
                     }}
-                >
-                    {filmCardsMock[selected].available ? 
-                    filmCardsMock[selected].img.map((src) => (
-                        <SwiperSlide>
-                            <img style={{cursor: "pointer"}} className="openableImg" width={"100%"} src={src}/>
-                        </SwiperSlide>
-                        )
-                        ) :
-                    (<span>?</span>)}
-                </Swiper>
-                    
+                    >
+                        {filmCardsMock[selected].available ? 
+                        filmCardsMock[selected].img.map((src) => (
+                            <SwiperSlide>
+                                <img style={{cursor: "pointer"}} className="openableImg" width={"100%"} src={src}/>
+                            </SwiperSlide>
+                            )
+                            ) :
+                        (<span>?</span>)}
+                    </Swiper>
+                    <div style={{    
+                        display: "flex",
+                        justifyContent: "space-between",
+                        width: "350px",
+                        position: "absolute",
+                        zIndex: "1",
+                        top: "223px"}}>
+                        <img style={{cursor: "pointer"}} className="arrowL" src="arrow-l.png" width={76}/>
+                        <img style={{cursor: "pointer"}} className="arrowR" src="arrow-r.png" width={84}/>
+                    </div>
                 </ImageContainer>
                 <TextContainer>
                 {filmCardsMock[selected].available ? 

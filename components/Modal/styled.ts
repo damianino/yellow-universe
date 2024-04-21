@@ -46,7 +46,7 @@ export const Content = styled.div`
 
 export const CloseModalBtn = styled.img`
 position: absolute;
-    width: 15px;
-    right: 50px;
+    width: 30px;
+    right: 0;
     margin-top: -30px
 `

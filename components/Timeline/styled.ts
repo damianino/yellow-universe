@@ -26,6 +26,8 @@ export const ImageContainer = styled.div`
 
     display: flex;
     justify-content: end;
+
+    position: relative;
     
     & > span {
         align-self: center;
@@ -73,7 +75,7 @@ export const Title = styled.h1`
     color: #E3D641;
     
     @media(max-width: 500px) {
-        font-size: 38px;
+        font-size: 28px;
         margin: 20px;
     }
 `

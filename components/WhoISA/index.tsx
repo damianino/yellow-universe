@@ -13,7 +13,7 @@ import "./style.css";
 
 // import required modules
 // @ts-ignore
-import { EffectCards } from "swiper";
+import { EffectCards } from "swiper/modules";
 
 const WhoIsA = () => {
     const textArrRef = useRef([
