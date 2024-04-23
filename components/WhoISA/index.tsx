@@ -14,8 +14,13 @@ import "./style.css";
 // import required modules
 // @ts-ignore
 import { EffectCards } from "swiper/modules";
+import Slider from "@/components/Modal/Slider";
+import {filmCardsMock} from "@/mocks/timeline";
+import {useModal} from "@/hooks/useModal";
 
 const WhoIsA = () => {
+    const {modal, openModal} = useModal()
+
     const textArrRef = useRef([
         "The hero of the story is between two poles. His parents carefully protected him from the rough and angular world, but this only delayed his confrontation with reality. When their house burned down under mysterious circumstances, A. was forced to face the world around him in full. At the age of 9, his upbringing was continued by his aunt, his sister on his father’s side.  She was not yellow, she treated them with contempt. There was no exit. Growing up was hard. The balance was fragile.",
         "A. serves as a telescope into reality. He learns and tries to accept the fluctuations of reality. The hero has to learn to accept losses. Home in the local sense, home in the global sense. He is haunted by an identity crisis, pressure from outside and from within.",
@@ -52,16 +57,31 @@ const WhoIsA = () => {
                         modules={[EffectCards]}
                         className="mySwiper"
                         loop={true}
-                        
+                        style={{
+                            width: "240px",
+                            height: "320px"
+                        }}
                     >
                         {Array(6).fill(0).map((e, i) => (
-                            <SwiperSlide><img style={{cursor: "pointer"}} className="openableImg" src={`whoisa/carousel/${i+1}.jpeg`} /></SwiperSlide>
+                            <SwiperSlide>
+                                <img
+                                    style={{cursor: "pointer"}}
+                                    src={`whoisa/carousel/${i+1}.jpeg`}
+                                    onClick={() => openModal(
+                                        (<Slider
+                                            children={Array(6).fill(0).map((e, i) => (<img width={"100%"} src={`whoisa/carousel/${i+1}.jpeg`}/>))}
+                                        />),
+                                        ()=>{},
+                                    )}
+                                />
+                            </SwiperSlide>
                         ))}
                         
                     </Swiper>
                     
                 </RightCol>
             </ContentGrid>
+            {modal}
         </Container>
     )
 }

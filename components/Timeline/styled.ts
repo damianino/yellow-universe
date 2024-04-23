@@ -96,3 +96,24 @@ export const CreditsBtn = styled.text`
     outline: none;
     padding: 5px 10px;
 `
+
+export const ArrowContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+
+    pointer-events: none;
+    & > img {
+        pointer-events: auto;
+    }
+`
+
+export const SliderContainer = styled.div`
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+`
