@@ -30,6 +30,7 @@ export const Container = styled.div`
     transform: translateY(-50%);
 
     text-align: center;
+    justify-content: center;
     transition: 1s;
 `
 
@@ -41,6 +42,11 @@ export const Content = styled.div`
     & > img{
         height: 70vh;
         align-self: center;
+    }
+    
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
     }
 `
 
