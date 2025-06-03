@@ -1,16 +1,51 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   height: 100%;
   overflow-x: hidden;
-  letter-spacing: .03rem;
+  letter-spacing: 0.03rem;
   line-height: 1.1rem;
 }
 
-body{
+body {
   background-color: #000;
   background-blend-mode: hard-light;
 }
+
+@font-face {
+  font-family: "Hvd";
+  src: url("../assets/Hvd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BlackNight";
+  src: url("../assets/BlackNight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rainer";
+  src: url("../assets/RainerTestv04-Regular.otf") format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Key";
+  src: url("../assets/SegmentAKeyTrial-Regular.otf") format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* 
 @font-face {
   font-family: 'Chainprinter';
@@ -22,19 +57,35 @@ body{
   src: local('Windsor'), url("../assets/windsor/Windsor Light Condensed Regular.otf") format('opentype');
 } */
 
-.display-none{
+.display-none {
   animation: anim 1s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
   pointer-events: none;
 }
-@keyframes anim{
-  0%{
+@keyframes anim {
+  0% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
     display: none;
-    
   }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+button {
+  outline: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  outline: none;
+  background: none;
 }
