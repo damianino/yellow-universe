@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* <Loader /> */}
+      <Loader />
       <VimeoPlayer />
       {/* <Timer /> */}
       <ArtifactCard />
