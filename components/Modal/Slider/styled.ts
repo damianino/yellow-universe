@@ -20,7 +20,7 @@ export const ArrowContainer = styled.div`
 
 export const SliderContainer = styled.div`
     display: flex;
-    //height: 80vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
 `
