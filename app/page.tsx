@@ -42,15 +42,17 @@ const modalStyle = {
 
 export default function Home() {
   const loaded = useOnLoadImages();
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    if (!loaded) return;
-    document.getElementById("loader")?.classList.add("display-none");
-  }, [loaded]);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 3000);
+  }, []);
 
   return (
     <main className={styles.main}>
-      <Loader />
+      {showLoader && <Loader />}
       <VimeoPlayer />
       {/* <Timer /> */}
       <ArtifactCard />
