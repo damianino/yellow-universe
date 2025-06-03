@@ -70,7 +70,7 @@ export default function VimeoPlayer() {
               </TimerContainer>
             </TimerButton>
           )}
-          <Title src="/chromnesia-2.png" alt="Логотип" />
+          <Title src="/Chromnesia-2.png" alt="Логотип" />
           <Info>
             <Roles>
               <Role>
