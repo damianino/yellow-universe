@@ -34,7 +34,7 @@ body {
   src: url("../assets/RainerTestv04-Regular.otf") format("opentype");;
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; 
 }
 
 @font-face {
