@@ -103,6 +103,7 @@ export const Thumbnail = styled.div`
 
 export const Title = styled.img`
   position: absolute;
+  top: 64%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
@@ -128,6 +129,7 @@ export const Icon = styled.img`
 export const Info = styled.div`
   width: 100%;
   position: absolute;
+  top: 92%;
   top: 87%;
   left: 50%;
   transform: translate(-50%, -50%);
