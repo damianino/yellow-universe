@@ -36,7 +36,6 @@ export const useModal = (): Res => {
   );
 
   useEffect(() => {
-    console.log("oncloseuseeffect", onClose);
     setModal(
       <Modal
         isOpen={isOpen}
