@@ -12,7 +12,7 @@ const ArtifactCard = () => {
 
   return (
     <Container>
-      <img src="img_1.png" alt="Chromnesia Box Set" />
+      <img loading="lazy" src="img_1.png" alt="Chromnesia Box Set" />
       <Button onClick={handleBuy}>BUY NOW</Button>
     </Container>
   );

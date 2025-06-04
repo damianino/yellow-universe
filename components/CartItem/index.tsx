@@ -22,7 +22,7 @@ export const CartItem = ({ item, subtitle, price }: CartItemProps) => {
   return (
     <ContainerItem>
       <ImageContainer>
-        <img src={"/img_1.png"} width={40} height={40} alt="cart" />
+        <img loading="lazy"  src={"/img_1.png"} width={40} height={40} alt="cart" />
       </ImageContainer>
       <Text>
         <TitleItem href="/aroma">{item}</TitleItem>
@@ -31,7 +31,7 @@ export const CartItem = ({ item, subtitle, price }: CartItemProps) => {
       <Count></Count>
       <Price>{price} руб</Price>
       <Delete>
-        <img src={"/circle-remove.svg"} width={25} height={25} alt="cart" />
+        <img loading="lazy"  src={"/circle-remove.svg"} width={25} height={25} alt="cart" />
       </Delete>
     </ContainerItem>
   );

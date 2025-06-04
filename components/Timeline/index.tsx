@@ -67,7 +67,7 @@ const Timeline = () => {
               >
                 {filmCardsMock[selected].img.map((src, i) => (
                   <SwiperSlide key={i}>
-                    <img
+                    <img loading="lazy" 
                       style={{ cursor: "pointer" }}
                       width={"100%"}
                       src={src}
@@ -76,7 +76,7 @@ const Timeline = () => {
                           <Slider
                             children={filmCardsMock[selected].img.map(
                               (src, i) => (
-                                <img key={i} width={"100%"} src={src} />
+                                <img loading="lazy"  key={i} width={"100%"} src={src} />
                               )
                             )}
                           />,
@@ -88,13 +88,13 @@ const Timeline = () => {
                 ))}
               </Swiper>
               <ArrowContainer>
-                <img
+                <img loading="lazy" 
                   style={{ cursor: "pointer" }}
                   className="arrowL"
                   src="arrow-l.png"
                   width={76}
                 />
-                <img
+                <img loading="lazy" 
                   style={{ cursor: "pointer" }}
                   className="arrowR"
                   src="arrow-r.png"
