@@ -48,7 +48,7 @@ const WhoIsA = () => {
         <LeftCol>
           <p>{textArrRef.current[0]}</p>
 
-          <img src="whoisa/1.jpg" />
+          <img loading="lazy"  src="whoisa/1.jpg" />
           <p>
             {widthRef.current < 500
               ? textArrRef.current[2]
@@ -76,7 +76,7 @@ const WhoIsA = () => {
               .fill(0)
               .map((e, i) => (
                 <SwiperSlide key={i}>
-                  <img
+                  <img loading="lazy" 
                     style={{ cursor: "pointer" }}
                     src={`whoisa/carousel/${i + 1}.jpeg`}
                     onClick={() =>
@@ -85,7 +85,7 @@ const WhoIsA = () => {
                           children={Array(6)
                             .fill(0)
                             .map((e, i) => (
-                              <img
+                              <img loading="lazy" 
                                 key={i}
                                 width={"100%"}
                                 src={`whoisa/carousel/${i + 1}.jpeg`}

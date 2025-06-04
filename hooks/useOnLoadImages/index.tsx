@@ -5,26 +5,29 @@ export const useOnLoadImages = () => {
   const handlers: [HTMLImageElement, () => void][] = [];
 
   useEffect(() => {
-    var imgs = document.images,
-      len = imgs.length,
-      counter = 0;
+    setTimeout(() => {
+      setStatus(true);
+    }, 3000);
+    // var imgs = document.images,
+    //   len = imgs.length,
+    //   counter = 0;
 
-    [].forEach.call(imgs, function (img: HTMLImageElement) {
-      if (img.complete && img.naturalWidth !== 0) incrementCounter();
-      else {
-        const handler = incrementCounter;
-        img.addEventListener("load", handler, false);
-      }
-    });
+    // [].forEach.call(imgs, function (img: HTMLImageElement) {
+    //   if (img.complete && img.naturalWidth !== 0) incrementCounter();
+    //   else {
+    //     const handler = incrementCounter;
+    //     img.addEventListener("load", handler, false);
+    //   }
+    // });
 
-    function incrementCounter() {
-      counter++;
-      if (counter === len) {
-        console.log("All images loaded!");
-        setStatus(true);
-      }
-      console.log("counter", counter);
-    }
+    // function incrementCounter() {
+    //   counter++;
+    //   if (counter === len) {
+    //     console.log("All images loaded!");
+    //     setStatus(true);
+    //   }
+    //   console.log("counter", counter);
+    // }
   }, []);
 
   return status;
