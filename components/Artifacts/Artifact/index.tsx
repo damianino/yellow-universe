@@ -9,7 +9,7 @@ const Artifact = ({name, img}: Props) => {
 
     return (
         <Container>
-            <img loading="lazy"  src={img}/>
+            <img   src={img}/>
             <div>
                 {name}
             </div>

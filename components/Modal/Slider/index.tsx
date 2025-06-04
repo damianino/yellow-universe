@@ -31,13 +31,13 @@ const Slider = ({ children }: Props) => {
         ))}
       </Swiper>
       <ArrowContainer>
-        <img loading="lazy" 
+        <img  
           style={{ cursor: "pointer" }}
           className="arrowLModal"
           src="arrow-l.png"
           width={76}
         />
-        <img loading="lazy" 
+        <img  
           style={{ cursor: "pointer" }}
           className="arrowRModal"
           src="arrow-r.png"

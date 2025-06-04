@@ -41,13 +41,14 @@ const modalStyle = {
 };
 
 export default function Home() {
+  const loaded = useOnLoadImages();
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    if (loaded) {
       setShowLoader(false);
-    }, 3000);
-  }, []);
+    }
+  }, [loaded]);
 
   return (
     <main className={styles.main}>

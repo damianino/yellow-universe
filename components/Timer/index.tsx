@@ -43,7 +43,7 @@ export default function Timer() {
   return (
     <Container>
       <Frame>
-        <img loading="lazy"  src="/time-frame.svg" width={582} height={361} alt="frame" />
+        <img   src="/time-frame.svg" width={582} height={361} alt="frame" />
         <TimeDiv>
           <span style={{ fontFamily: "Hvd" }}>{formatDays(timeLeft)}</span>
           <span style={{ fontFamily: "BlackNight" }}>
