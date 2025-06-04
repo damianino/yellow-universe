@@ -308,11 +308,11 @@ export const BackgroundImage = styled.img`
 
   @media (max-width: 700px) {
     width: 350px;
-    height: 785px;
+    height: 760px;
   }
   @media (max-width: 400px) {
     width: 310px;
-    height: 775px;
+    height: 745px;
   }
 `;
 
@@ -336,5 +336,26 @@ export const BackgroundSmallInput = styled.img`
   @media (max-width: 700px) {
     width: 100%;
     height: 45px;
+  }
+`;
+
+export const TgText = styled.div`
+  font-size: 12px;
+  color: #afafaf;
+  z-index: 23;
+
+  @media (max-width: 700px) {
+    line-height: 10px;
+    font-size: 8px;
+    margin-left: 10px;
+  }
+
+  a {
+    cursor: pointer;
+    color: #ffd700;
+
+    :hover {
+      color: #fff1a6;
+    }
   }
 `;

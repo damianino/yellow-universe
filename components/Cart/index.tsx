@@ -16,14 +16,14 @@ import {
   Ship,
   StyledInput,
   Sum,
+  TgText,
   Title,
   Total,
 } from "@/components/Cart/styled";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Modal from "../Modal";
 import { useCart, useModalStore } from "@/app/store/cartStore";
-import axios from "axios";
+
 import {
   ContainerItem,
   Count,
@@ -36,16 +36,17 @@ import {
 
 const initialFormState = {
   name: "",
-  full_name: "",
+  fullName: "",
   email: "",
   phone: "",
-  telegram: "",
+  tgUsername: "",
   country: "",
   city: "",
   address: "",
-  index: "",
+  postalCode: "",
   comment: "",
-  delivery: "russian_post",
+  quantity: "",
+  // delivery: "russian_post",
 };
 
 export const Cart = () => {
@@ -54,16 +55,17 @@ export const Cart = () => {
 
   const [form, setForm] = useState({
     name: "",
-    full_name: "",
+    fullName: "",
     email: "",
     phone: "",
-    telegram: "",
+    tgUsername: "",
     country: "",
     city: "",
     address: "",
-    index: "",
+    postalCode: "",
     comment: "",
-    delivery: "russian_post",
+    quantity: "",
+    // delivery: "russian_post",
   });
 
   const quantity = useCart((state) => state.quantity);
@@ -76,18 +78,45 @@ export const Cart = () => {
   };
 
   const handleSubmit = async () => {
-    const payload = {
-      product: "Chromnesia Box Set",
-      quantity,
-      ...form,
-    };
     try {
-      await axios.post("/api/order", payload);
+      const raw = JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        tgUsername: form.tgUsername,
+        fullName: form.fullName,
+        country: form.country,
+        city: form.city,
+        address: form.address,
+        postalCode: form.postalCode,
+        comment: form.comment || "",
+        quantity: quantity,
+      });
+
+      const requestOptions: RequestInit = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://d5db2c6pt6nvm2hh7uk3.cmxivbes.apigw.yandexcloud.net/newOrder",
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log("Yandex Cloud Response:", result))
+        .catch((error) => console.error("Yandex Cloud Error:", error));
+
       setSubmitted(true);
       clearCart();
       setForm(initialFormState);
+      closeModal();
     } catch (err) {
       alert("Ошибка при отправке заказа");
+      console.error(err);
     }
   };
 
@@ -112,7 +141,7 @@ export const Cart = () => {
             src="/cart/frame.png"
             alt="custom input"
             width={590}
-            height={1105}
+            height={1085}
           />
           <Title>Ваш заказ</Title>
           <ContainerItem>
@@ -149,6 +178,7 @@ export const Cart = () => {
               value={form.name}
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Имя"
+              required
             />
           </InputWrapper>
           <InputWrapper>
@@ -185,11 +215,18 @@ export const Cart = () => {
               height={65}
             />
             <StyledInput
-              value={form.telegram}
-              onChange={(e) => handleChange("telegram", e.target.value)}
+              value={form.tgUsername}
+              onChange={(e) => handleChange("tgUsername", e.target.value)}
               placeholder="Telegram"
             />
           </InputWrapper>
+          <TgText>
+            Если Вам нельзя отправить сообщение в телеграмме, напишите{" "}
+            <a target="_blank" href="https://t.me/shterntm">
+              сюда
+            </a>
+            , чтобы узнать детали оплаты
+          </TgText>
 
           <Delivery>Delivery</Delivery>
           <InputWrapper>
@@ -200,18 +237,18 @@ export const Cart = () => {
               height={65}
             />
             <StyledInput
-              value={form.full_name}
-              onChange={(e) => handleChange("full_name", e.target.value)}
+              value={form.fullName}
+              onChange={(e) => handleChange("fullName", e.target.value)}
               placeholder="Полное имя"
             />
           </InputWrapper>
-          <RadioContainer>
+          {/* <RadioContainer>
             <label>
               <input
                 type="radio"
                 name="delivery"
                 value="russian_post"
-                checked={form.delivery === "russian_post"}
+                // checked={form.delivery === "russian_post"}
                 onChange={() => handleChange("delivery", "russian_post")}
               />
               Почта России
@@ -221,12 +258,12 @@ export const Cart = () => {
                 type="radio"
                 name="delivery"
                 value="cdek"
-                checked={form.delivery === "cdek"}
+                // checked={form.delivery === "cdek"}
                 onChange={() => handleChange("delivery", "cdek")}
               />
               СДЭК
             </label>
-          </RadioContainer>
+          </RadioContainer> */}
           <Ship>
             <InputWrapper>
               <BackgroundSmallInput
@@ -279,8 +316,8 @@ export const Cart = () => {
               />
               <StyledInput
                 placeholder="Индекс"
-                value={form.index}
-                onChange={(e) => handleChange("index", e.target.value)}
+                value={form.postalCode}
+                onChange={(e) => handleChange("postalCode", e.target.value)}
               />
             </InputWrapper>
           </Ship>
@@ -299,7 +336,7 @@ export const Cart = () => {
             />
           </InputWrapper>
 
-          <Total>Total: {quantity * 600 + 500}</Total>
+          <Total>Total: {quantity * 600}</Total>
           <ButtonWrapper>
             <BackgroundInput
               src="/cart/button.png"
