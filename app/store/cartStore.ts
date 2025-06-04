@@ -16,7 +16,7 @@ export const useCart = create<CartState>((set) => ({
     set((state) => ({
       quantity: state.quantity > 1 ? state.quantity - 1 : 1,
     })),
-  clearCart: () => set({ quantity: 0 }),
+  clearCart: () => set({ quantity: 1 }),
 }));
 
 type ModalStore = {
