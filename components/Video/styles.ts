@@ -6,6 +6,7 @@ export const VideoContainer = styled.div`
   height: 900px; /* Фиксированная высота */
   margin: auto;
   background: black;
+  height: 100vh;
 
   @media (max-width: 700px) {
     height: 100vh;
@@ -54,7 +55,7 @@ export const CustomPlayButton = styled.button.withConfig({
 
 export const TimerButton = styled.button`
   position: absolute;
-  top: 40%;
+  top: 36%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -102,13 +103,12 @@ export const Thumbnail = styled.div`
 
 export const Title = styled.img`
   position: absolute;
-  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
   transition: 0.3s;
   z-index: 2;
-  height: 110px;
+  height: 130px;
 
   @media (max-width: 700px) {
     height: 50px;
@@ -118,7 +118,7 @@ export const Title = styled.img`
 
 export const Icon = styled.img`
   width: 120px;
-  margin-top: 50px;
+  margin-top: 20px;
 
   @media (max-width: 700px) {
     width: 60px;
@@ -128,7 +128,7 @@ export const Icon = styled.img`
 export const Info = styled.div`
   width: 100%;
   position: absolute;
-  top: 92%;
+  top: 87%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
