@@ -6,10 +6,10 @@ export const VideoContainer = styled.div`
   height: 900px; /* Фиксированная высота */
   margin: auto;
   background: black;
-  height: 100vh;
+  height: 100dvh;
 
   @media (max-width: 700px) {
-    height: 100vh;
+    height: 100dvh;
   }
 `;
 

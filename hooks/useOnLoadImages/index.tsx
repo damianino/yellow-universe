@@ -5,11 +5,9 @@ export const useOnLoadImages = () => {
   const handlers: [HTMLImageElement, () => void][] = [];
 
   useEffect(() => {
-    console.log("checking");
     var imgs = document.images,
       len = imgs.length,
       counter = 0;
-    console.log("imgs", imgs);
 
     [].forEach.call(imgs, function (img: HTMLImageElement) {
       if (img.complete && img.naturalWidth !== 0) incrementCounter();
@@ -18,15 +16,6 @@ export const useOnLoadImages = () => {
         img.addEventListener("load", handler, false);
       }
     });
-
-    setTimeout(() => {
-      Array.from(imgs).forEach((e) => {
-        //@ts-ignore
-        if (!e.complete) {
-          console.log("!complete", e);
-        }
-      });
-    }, 5000);
 
     function incrementCounter() {
       counter++;
