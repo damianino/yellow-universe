@@ -45,16 +45,15 @@ export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    if (loaded) {
       setShowLoader(false);
-    }, 3000);
-  }, []);
+    }
+  }, [loaded]);
 
   return (
     <main className={styles.main}>
       {showLoader && <Loader />}
       <VimeoPlayer />
-      {/* <Timer /> */}
       <ArtifactCard />
       <Header />
       <YellowUniverse />

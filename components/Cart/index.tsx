@@ -104,7 +104,7 @@ export const Cart = () => {
         isOpen={isOpen}
         onClick={() => useModalStore.getState().openModal()}
       >
-        <Image src={"/cart.svg"} width={40} height={40} alt="cart" />
+        <img src={"/cart.svg"} width={40} height={40} alt="cart" />
       </Container>
       <Modal isOpen={isOpen} onClose={closeModal}>
         <ModalContainer>
@@ -127,7 +127,7 @@ export const Cart = () => {
             </Count>
             <Price>600 руб</Price>
             <Line>
-              <Image
+              <img
                 src={"/cart/line-1.png"}
                 width={532}
                 height={60}
