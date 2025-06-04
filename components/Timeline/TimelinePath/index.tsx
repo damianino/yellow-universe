@@ -238,10 +238,9 @@ const TimelinePath = ({
           />
           <g>
             {ticksData.map((td, i) => (
-              <div key={i}>
+              <>
                 <circle
                   className={td.isCentral ? "central" : ""}
-                  key={i}
                   style={{
                     transformBox: "fill-box",
                     transformOrigin: "center",
@@ -269,7 +268,7 @@ const TimelinePath = ({
                 >
                   {ticksData.length - i == 9 ? ticksData.length - i : "?"}
                 </text>
-              </div>
+              </>
             ))}
           </g>
         </svg>
