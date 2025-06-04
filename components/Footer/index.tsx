@@ -7,8 +7,8 @@ const Footer = () => {
     return(
         <Container>
             <Wrapper>
-                <img loading="lazy"  onClick={() => window.location.assign("https://www.instagram.com/acidtopser/")} src="written.png"/>
-                <img loading="lazy"  onClick={() => window.location.assign("https://www.instagram.com/loadloudco/")} src="produced.png"/>
+                <img   onClick={() => window.location.assign("https://www.instagram.com/acidtopser/")} src="written.png"/>
+                <img   onClick={() => window.location.assign("https://www.instagram.com/loadloudco/")} src="produced.png"/>
             </Wrapper>
          </Container>
     )

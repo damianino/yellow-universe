@@ -7,7 +7,7 @@ const  Header = () => {
     return (
         <Container>
             <div>
-                <Title src="/welcome chrome website copy.png"/>
+                <Title src="/welcome chrome logo.jpg"/>
                 {/* <SubTitle>
                     a mixed media narrative
                 </SubTitle> */}

@@ -83,7 +83,7 @@ export const Thumbnail = styled.div`
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  background-image: url("/chromenesia.png");
+  background-image: url("/chromenesia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
