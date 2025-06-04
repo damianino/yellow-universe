@@ -300,7 +300,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const BackgroundImage = styled(Image)`
+export const BackgroundImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -316,7 +316,7 @@ export const BackgroundImage = styled(Image)`
   }
 `;
 
-export const BackgroundInput = styled(Image)`
+export const BackgroundInput = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -327,7 +327,7 @@ export const BackgroundInput = styled(Image)`
   }
 `;
 
-export const BackgroundSmallInput = styled(Image)`
+export const BackgroundSmallInput = styled.img`
   position: absolute;
   top: 0;
   left: 0;

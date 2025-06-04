@@ -2,50 +2,61 @@ import { useState, useEffect, RefObject } from "react";
 
 export const useOnLoadImages = () => {
   const [status, setStatus] = useState(false);
+  const handlers: [HTMLImageElement, () => void][] = [];
 
   useEffect(() => {
-    console.log("checking")
+    console.log("checking");
     var imgs = document.images,
-    len = imgs.length,
-    counter = 0;
+      len = imgs.length,
+      counter = 0;
+    console.log("imgs", imgs);
 
-    [].forEach.call( imgs, function( img: HTMLImageElement ) {
-        if(img.complete)
-          incrementCounter();
-        else
-          img.addEventListener( 'load', incrementCounter, false );
-    } );
+    [].forEach.call(imgs, function (img: HTMLImageElement) {
+      if (img.complete && img.naturalWidth !== 0) incrementCounter();
+      else {
+        const handler = incrementCounter;
+        img.addEventListener("load", handler, false);
+      }
+    });
+
+    setTimeout(() => {
+      Array.from(imgs).forEach((e) => {
+        //@ts-ignore
+        if (!e.complete) {
+          console.log("!complete", e);
+        }
+      });
+    }, 5000);
 
     function incrementCounter() {
-        counter++;
-        if ( counter === len ) {
-            console.log( 'All images loaded!' );
-            setStatus(true)
-        }
+      counter++;
+      if (counter === len) {
+        console.log("All images loaded!");
+        setStatus(true);
+      }
+      console.log("counter", counter);
     }
   }, []);
 
   return status;
 };
 
-export const OnLoadImagesNonHook = (callback: ()=>void) => {
-    console.log("checking")
-    var imgs = document.images,
+export const OnLoadImagesNonHook = (callback: () => void) => {
+  console.log("checking");
+  var imgs = document.images,
     len = imgs.length,
     counter = 0;
 
-    [].forEach.call( imgs, function( img: HTMLImageElement ) {
-        if(img.complete)
-          incrementCounter();
-        else
-          img.addEventListener( 'load', incrementCounter, false );
-    } );
+  [].forEach.call(imgs, function (img: HTMLImageElement) {
+    if (img.complete) incrementCounter();
+    else img.addEventListener("load", incrementCounter, false);
+  });
 
-    function incrementCounter() {
-        counter++;
-        if ( counter === len ) {
-            console.log( 'All images loaded!' );
-            callback()
-        }
+  function incrementCounter() {
+    counter++;
+    if (counter === len) {
+      console.log("All images loaded!");
+      callback();
     }
-}
+  }
+};

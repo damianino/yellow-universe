@@ -8,8 +8,6 @@ const ArtifactCard = () => {
   const handleBuy = () => {
     addToCart();
     openModal();
-
-    console.log("open", openModal);
   };
 
   return (
