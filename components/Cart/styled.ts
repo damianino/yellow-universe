@@ -15,7 +15,7 @@ export const Container = styled.div.withConfig({
   top: 20px;
   bottom: initial;
   right: 20px;
-  z-index: 222;
+  z-index: 2;
 
   &:hover {
     box-shadow: #e3d641;
@@ -36,6 +36,20 @@ export const ModalContainer = styled.div`
   text-align: left;
   z-index: 2;
   background-color: black;
+
+  h5 {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    font-size: 18px;
+
+    @media (max-width: 700px) {
+      top: 40px;
+      font-size: 12px;
+      max-width: 270px;
+      margin: 20px auto;
+    }
+  }
 
   @media (max-width: 700px) {
     width: 320px;
@@ -324,6 +338,19 @@ export const BackgroundInput = styled.img`
   @media (max-width: 700px) {
     width: 100%;
     height: 40px;
+  }
+`;
+
+export const SuccessInput = styled.img`
+  position: absolute;
+  top: 90px;
+  left: 0;
+  height: 80px;
+
+  @media (max-width: 700px) {
+    top: 55px;
+    width: 100%;
+    height: 70px;
   }
 `;
 

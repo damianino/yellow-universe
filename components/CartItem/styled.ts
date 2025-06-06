@@ -58,6 +58,7 @@ export const Count = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  z-index: 65;
 
   @media (max-width: 700px) {
     gap: 5px;
@@ -76,6 +77,7 @@ export const Tap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 `;
 
 export const Price = styled.div`
