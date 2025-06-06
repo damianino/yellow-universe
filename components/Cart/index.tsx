@@ -7,14 +7,13 @@ import {
   ButtonWrapper,
   Container,
   Delivery,
-  Info,
   InputWrapper,
   Line,
   ModalContainer,
   OrderButton,
-  RadioContainer,
   Ship,
   StyledInput,
+  SuccessInput,
   Sum,
   TgText,
   Title,
@@ -52,6 +51,8 @@ const initialFormState = {
 export const Cart = () => {
   const { isOpen, closeModal } = useModalStore();
   const [submitted, setSubmitted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -102,21 +103,21 @@ export const Cart = () => {
         redirect: "follow",
       };
 
-      fetch(
+      const response = await fetch(
         "https://d5db2c6pt6nvm2hh7uk3.cmxivbes.apigw.yandexcloud.net/newOrder",
         requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => console.log("Yandex Cloud Response:", result))
-        .catch((error) => console.error("Yandex Cloud Error:", error));
+      );
+
+      if (!response.ok) throw new Error("Ошибка сети");
 
       setSubmitted(true);
       clearCart();
       setForm(initialFormState);
       closeModal();
+      setShowSuccess(true);
     } catch (err) {
-      alert("Ошибка при отправке заказа");
       console.error(err);
+      setShowError(true);
     }
   };
 
@@ -133,7 +134,7 @@ export const Cart = () => {
         isOpen={isOpen}
         onClick={() => useModalStore.getState().openModal()}
       >
-        <img   src={"/cart.svg"} width={40} height={40} alt="cart" />
+        <img src={"/cart.svg"} width={40} height={40} alt="cart" />
       </Container>
       <Modal isOpen={isOpen} onClose={closeModal}>
         <ModalContainer>
@@ -146,7 +147,7 @@ export const Cart = () => {
           <Title>Ваш заказ</Title>
           <ContainerItem>
             <Text>
-              <TitleItem href="/aroma">товар</TitleItem>
+              <TitleItem>товар</TitleItem>
               <SubTitle>Мистери бокс</SubTitle>
             </Text>
             <Count>
@@ -156,7 +157,7 @@ export const Cart = () => {
             </Count>
             <Price>600 руб</Price>
             <Line>
-              <img  
+              <img
                 src={"/cart/line-1.png"}
                 width={532}
                 height={60}
@@ -348,6 +349,35 @@ export const Cart = () => {
           </ButtonWrapper>
         </ModalContainer>
       </Modal>
+      {showSuccess && (
+        <Modal isOpen={showSuccess} onClose={() => setShowSuccess(false)}>
+          <ModalContainer>
+            <SuccessInput
+              src="/cart/input-5.png"
+              alt="custom input"
+              width={590}
+              height={65}
+            />
+            <h5>Заказ успешно отправлен. Скоро с вами свяжутся!</h5>
+            <button onClick={() => setShowSuccess(false)}>Закрыть</button>
+          </ModalContainer>
+        </Modal>
+      )}
+
+      {showError && (
+        <Modal isOpen={showError} onClose={() => setShowError(false)}>
+          <ModalContainer>
+            <SuccessInput
+              src="/cart/input-5.png"
+              alt="custom input"
+              width={590}
+              height={65}
+            />
+            <h5>Что-то пошло не так, попробуйте еще раз</h5>
+            <button onClick={() => setShowError(false)}>Закрыть</button>
+          </ModalContainer>
+        </Modal>
+      )}
     </>
   );
 };

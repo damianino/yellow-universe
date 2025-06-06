@@ -20,7 +20,7 @@ export const Overlay = styled.div`
   padding: 20px;
 
   @media (max-width: 700px) {
-    padding: 10px;
+    padding: 10px 0;
   }
 `;
 
