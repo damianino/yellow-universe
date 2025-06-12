@@ -359,7 +359,7 @@ export const Cart = () => {
               height={65}
             />
             <h5>Заказ успешно отправлен. Скоро с вами свяжутся!</h5>
-            <button onClick={() => setShowSuccess(false)}>Закрыть</button>
+            <button onClick={() => setShowSuccess(false)}></button>
           </ModalContainer>
         </Modal>
       )}
@@ -374,7 +374,7 @@ export const Cart = () => {
               height={65}
             />
             <h5>Что-то пошло не так, попробуйте еще раз</h5>
-            <button onClick={() => setShowError(false)}>Закрыть</button>
+            <button onClick={() => setShowError(false)}></button>
           </ModalContainer>
         </Modal>
       )}
