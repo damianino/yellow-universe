@@ -28,6 +28,7 @@ export const Container = styled.section`
         margin-bottom: 50px;
         width: 95vw;
         font-size: 12px;
+        grid-template-columns: auto;
 
         & > img {
             grid-row: 1;
