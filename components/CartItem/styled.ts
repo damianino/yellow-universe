@@ -62,14 +62,15 @@ export const Count = styled.div`
 
   @media (max-width: 700px) {
     gap: 5px;
-    font-size: 12px;
+    font-size: 14px;
   }
   @media (max-width: 400px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
 export const Tap = styled.div`
+ font-size: 18px;
   cursor: pointer;
   padding: 10px;
   width: 10px;
