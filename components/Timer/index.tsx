@@ -5,8 +5,7 @@ import { Container, Frame, TimeDiv } from "./styles";
 import Image from "next/image";
 
 export default function Timer() {
-  // Задай здесь дату, до которой будет отсчет
-  const targetDate = new Date("2025-06-29T20:00:00").getTime();
+  const targetDate = new Date("2025-07-03T20:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
 
@@ -43,10 +42,16 @@ export default function Timer() {
   return (
     <Container>
       <Frame>
-        <img   src="/time-frame.svg" width={582} height={361} alt="frame" />
+        <img src="/time-frame.svg" width={582} height={361} alt="frame" />
         <TimeDiv>
           <span style={{ fontFamily: "Hvd" }}>{formatDays(timeLeft)}</span>
-          <span style={{ fontFamily: "BlackNight" }}>
+          <span
+            style={{
+              fontFamily: "BlackNight",
+              textAlign: "right",
+              width: "6.7ch",
+            }}
+          >
             {formatClock(timeLeft)}
           </span>
         </TimeDiv>
