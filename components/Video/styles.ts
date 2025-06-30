@@ -32,7 +32,7 @@ export const CustomPlayButton = styled.button.withConfig({
   film?: boolean;
 }>`
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: ${(props) => (props.film ? "pointer" : "auto")};
@@ -103,7 +103,7 @@ export const Thumbnail = styled.div`
 
 export const Title = styled.img`
   position: absolute;
-  top: 64%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
