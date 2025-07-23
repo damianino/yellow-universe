@@ -19,7 +19,7 @@ export const filmCardsMock = [
     
     The fake driver took me toward the border. I counted the posts. My Solange could no longer hold me.
     
-    The border.
+    The border. 
     Where will I end up next?`,
     available: true,
     video: "https://vimeo.com/740451944",
