@@ -4,6 +4,7 @@ import TimelinePath from "@/components/Timeline/TimelinePath";
 import {
   ArrowContainer,
   CardWrapper,
+  ChapterContainer,
   Credits,
   CreditsBtn,
   ImageContainer,
@@ -33,9 +34,6 @@ const Timeline = () => {
   const { modal, openModal } = useModal();
 
   const [selected, setSelected] = useState(defaultSelected);
-
-  console.log("selected", selected);
-  console.log("filmCardsMock", filmCardsMock);
 
   return (
     <>
@@ -147,19 +145,21 @@ const Timeline = () => {
           </TextContainer>
         </CardWrapper>
       ) : (
-        <VideoContainer>
-          <ReactPlayer
-            url={filmCardsMock[selected].video}
-            controls={true}
-            width="100%"
-            height="100%"
-          />
+        <ChapterContainer>
+          <VideoContainer>
+            <ReactPlayer
+              url={filmCardsMock[selected].video}
+              controls={true}
+              width="100%"
+              height="100%"
+            />
+          </VideoContainer>
           <TextVideoContainer>
             {filmCardsMock[selected].available
               ? filmCardsMock[selected].text
               : "Coming soon..."}
           </TextVideoContainer>
-        </VideoContainer>
+        </ChapterContainer>
       )}
       {modal}
       {/*<Modal*/}
