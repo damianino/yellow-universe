@@ -136,7 +136,7 @@ export const SliderContainer = styled.div`
 
 export const VideoContainer = styled.div`
   width: 100%;
-  height: 1000px;
+  height: 850px;
 
   @media (max-width: 700px) {
     height: 400px;
