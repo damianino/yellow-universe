@@ -93,6 +93,83 @@ export default function VimeoPlayer() {
                 <As>dop</As>
                 <Name>Michail Denisov</Name>
               </Role>
+
+              <Role>
+                <As>gen. prod</As>
+                <Name>Artem Shtern, Felix Oganov</Name>
+              </Role>
+              <Role>
+                <As>creative prod</As>
+                <Name>Felix Oganov</Name>
+              </Role>
+              <Role>
+                <As>line prod</As>
+                <Name>Kira Arysheva</Name>
+              </Role>
+              <Role>
+                <As>camera 1st ac — </As>
+                <Name>Danya Byakov, Peter Babitsky</Name>
+              </Role>
+              <Role>
+                <As>production design prod. designer —</As>
+                <Name>Danya Byakov, Peter Babitsky</Name>
+              </Role>
+              <Role>
+                <As>asst. designer — </As>
+                <Name>Sofia Soboleva</Name>
+              </Role>
+              <Role>
+                <As>lighting & grip gaffer</As>
+                <Name>Irakly Vasilkovsky</Name>
+              </Role>
+              <Role>
+                <As>light</As>
+                <Name>Peter Babitsky</Name>
+              </Role>
+              <Role>
+                <As>key grip</As>
+                <Name>Peter Pankratov</Name>
+              </Role>
+              <Role>
+                <As>post editor</As>
+                <Name>Daniel Komarov</Name>
+              </Role>
+              <Role>
+                <As>color</As>
+                <Name>Mikhail Denisov</Name>
+              </Role>
+              <Role>
+                <As>sound</As>
+                <Name>Artem Shtern</Name>
+              </Role>
+              <Role>
+                <As>ai</As>
+                <Name>Olga Barabanova</Name>
+              </Role>
+              <Role>
+                <As>vfx lead</As>
+                <Name>Alexey Garny</Name>
+              </Role>
+              <Role>
+                <As>vfx</As>
+                <Name>Maxim Yasinsky</Name>
+              </Role>
+              <Role>
+                <As>comp</As>
+                <Name>Alexandr Hirschbein</Name>
+              </Role>
+              <Role>
+                <As>bg artists</As>
+                <Name>Mikhail Miroshnichenko, Alexey Vorontsov</Name>
+              </Role>
+              <Role>
+                <As>cgi</As>
+                <Name>Mikhail Semenov</Name>
+              </Role>
+              <Role>
+                <As>titles</As>
+                <Name>Acid Topser & Maxim Yasinsky</Name>
+              </Role>
             </Roles>
             <Icon src="/mpaa-g.png" alt="mpaa" />
           </Info>
@@ -101,7 +178,7 @@ export default function VimeoPlayer() {
 
       <ReactPlayer
         ref={playerRef}
-        url="https://vimeo.com/524933864"
+        url="https://vimeo.com/1098983331"
         playing={isPlaying}
         controls={true}
         width="100%"

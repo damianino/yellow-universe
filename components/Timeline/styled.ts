@@ -57,6 +57,23 @@ export const TextContainer = styled.div`
   }
 `;
 
+export const TextVideoContainer = styled.div`
+  width: 48%;
+  padding: 20px;
+  padding-top: 0;
+  margin: 0 auto;
+  color: #d9d9d9;
+  font-family: "Bookman Old Style", Georgia, serif;
+  white-space: pre-wrap;
+  text-align: justify;
+  font-size: 16px;
+
+  @media (max-width: 500px) {
+    width: calc(100% - 40px);
+    font-size: 12px;
+  }
+`;
+
 export const TitleImg = styled.img`
   height: 150px;
 
@@ -115,4 +132,19 @@ export const SliderContainer = styled.div`
   width: 400px;
   justify-content: center;
   align-items: center;
+`;
+
+export const VideoContainer = styled.div`
+  width: 100%;
+  height: 1000px;
+
+  @media (max-width: 700px) {
+    height: 400px;
+  }
+`;
+
+export const ChapterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;

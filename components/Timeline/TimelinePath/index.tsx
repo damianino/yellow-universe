@@ -10,6 +10,7 @@ import { Wrapper } from "@/components/Timeline/TimelinePath/styled";
 import { useOnSwipe } from "@/hooks/useSwipe";
 import { useWheelStopListener } from "@/hooks/useWheelStopListener";
 import "./style.css";
+import { filmCardsMock } from "@/mocks/timeline";
 
 interface TickData {
   pos: number;
@@ -198,8 +199,10 @@ const TimelinePath = ({
 
   const onTickSelect = useCallback((i: number) => {
     snapTickToCenter(i);
-    setSelected(i);
+    setSelected(filmCardsMock.length - i - 1);
   }, []);
+
+console.log("ticksData", ticksData)
 
   return (
     <Wrapper ref={wrapperRef}>
@@ -266,7 +269,8 @@ const TimelinePath = ({
                   textAnchor="middle"
                   dominantBaseline="middle"
                 >
-                  {ticksData.length - i == 9 ? ticksData.length - i : "?"}
+                  {filmCardsMock[filmCardsMock.length - i - 1].available ? filmCardsMock.length - i  : "?"} 
+                  {/* 1 */}
                 </text>
               </>
             ))}
