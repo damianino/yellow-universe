@@ -80,6 +80,7 @@ export const TitleImg = styled.img`
   @media (max-width: 500px) {
     width: 90%;
     height: auto;
+    margin-bottom: 10px;
   }
 `;
 

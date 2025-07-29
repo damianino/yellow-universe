@@ -13,14 +13,14 @@ export const filmCardsMock = [
     img: [],
     text: `It felt like, for the first time in fifteen years, I had found something like home. Anna and I had been getting along really well for almost a month. I was on my way to a date. As usual, I planned to be on time. My Solange was playing in my headphones. My eyes were closed, but I felt the driver hit the brakes. The car pulled over at 9:24 PM.
 
-    There were two of them outside. Two strangers. We had a conversation that split my life into before and after. I was given a moment to say goodbye—silently, inside—to everything that had surrounded me all these years. The meeting with Anna was never meant to happen.
+There were two of them outside. Two strangers. We had a conversation that split my life into before and after. I was given a moment to say goodbye—silently, inside—to everything that had surrounded me all these years. The meeting with Anna was never meant to happen.
     
-    Through the screeching horror and the headache-inducing dread, I could only imagine how Anna must have felt. I wished this was just another nightmare—one that would fade by morning. I pinched myself until it hurt, but I was still in that cursed car.
+Through the screeching horror and the headache-inducing dread, I could only imagine how Anna must have felt. I wished this was just another nightmare—one that would fade by morning. I pinched myself until it hurt, but I was still in that cursed car.
     
-    The fake driver took me toward the border. I counted the posts. My Solange could no longer hold me.
+The fake driver took me toward the border. I counted the posts. My Solange could no longer hold me.
     
-    The border. 
-    Where will I end up next?`,   
+The border. 
+Where will I end up next?`,   
     available: true,
     video: "https://vimeo.com/740451944",
   },

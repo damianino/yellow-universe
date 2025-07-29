@@ -81,6 +81,7 @@ export default function VimeoPlayer() {
                 <Name>Giorgi Kurashvili</Name>
                 <As>as stranger</As>
               </Role>
+              <div style={{ flexBasis: '100%', height: '0' }} />
               <Role>
                 <As>director</As>
                 <Name>Artyom Shalak</Name>
@@ -107,19 +108,19 @@ export default function VimeoPlayer() {
                 <Name>Kira Arysheva</Name>
               </Role>
               <Role>
-                <As>camera 1st ac — </As>
+                <As>camera 1st ac </As>
                 <Name>Danya Byakov, Peter Babitsky</Name>
               </Role>
               <Role>
-                <As>production design prod. designer —</As>
+                <As>production design prod. designer</As>
                 <Name>Danya Byakov, Peter Babitsky</Name>
               </Role>
               <Role>
-                <As>asst. designer — </As>
+                <As>asst. designer </As>
                 <Name>Sofia Soboleva</Name>
               </Role>
               <Role>
-                <As>lighting & grip gaffer</As>
+                <As>lighting and grip gaffer</As>
                 <Name>Irakly Vasilkovsky</Name>
               </Role>
               <Role>
@@ -168,7 +169,7 @@ export default function VimeoPlayer() {
               </Role>
               <Role>
                 <As>titles</As>
-                <Name>Acid Topser & Maxim Yasinsky</Name>
+                <Name>Acid Topser, Maxim Yasinsky</Name>
               </Role>
             </Roles>
             <Icon src="/mpaa-g.png" alt="mpaa" />

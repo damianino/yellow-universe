@@ -223,7 +223,7 @@ export const Cart = () => {
           </InputWrapper>
           <TgText>
             Если Вам нельзя отправить сообщение в телеграмме, напишите{" "}
-            <a target="_blank" href="https://t.me/shterntm">
+            <a target="_blank" href="https://t.me/clothingisoverrated">
               сюда
             </a>
             , чтобы узнать детали оплаты

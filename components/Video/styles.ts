@@ -32,7 +32,7 @@ export const CustomPlayButton = styled.button.withConfig({
   film?: boolean;
 }>`
   position: absolute;
-  top: 46%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: ${(props) => (props.film ? "pointer" : "auto")};
@@ -109,7 +109,7 @@ export const Thumbnail = styled.div`
 
 export const Title = styled.img`
   position: absolute;
-  top: 65%;
+  top: 66%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
@@ -177,7 +177,7 @@ export const Role = styled.div`
 
 export const Name = styled.div`
   font-family: "Rainer";
-  font-size: 33px;
+  font-size: 31px;
 
   @media (max-width: 700px) {
     font-size: 10px;
@@ -186,7 +186,7 @@ export const Name = styled.div`
 
 export const As = styled.div`
   font-family: "Key";
-  font-size: 23px;
+  font-size: 21px;
 
   @media (max-width: 700px) {
     font-size: 10px;

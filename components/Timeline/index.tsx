@@ -108,22 +108,22 @@ const Timeline = () => {
               </SliderContainer>
             ) : (
               <div
-                style={{
-                  height: "330px",
-                  width: "330px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                // style={{
+                //   height: "330px",
+                //   width: "330px",
+                //   display: "flex",
+                //   alignItems: "center",
+                //   justifyContent: "center",
+                // }}
               >
-                <span>?</span>
+                <span></span>
               </div>
             )}
           </ImageContainer>
           <TextContainer>
             {filmCardsMock[selected].available
               ? filmCardsMock[selected].text
-              : "Coming soon..."}
+              : ""}
             {filmCardsMock[selected].available ? (
               <div style={{ marginTop: "20px" }}>
                 <CreditsBtn
@@ -157,7 +157,7 @@ const Timeline = () => {
           <TextVideoContainer>
             {filmCardsMock[selected].available
               ? filmCardsMock[selected].text
-              : "Coming soon..."}
+              : ""}
           </TextVideoContainer>
         </ChapterContainer>
       )}
