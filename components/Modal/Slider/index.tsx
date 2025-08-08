@@ -5,11 +5,12 @@ import "./style.css";
 
 type Props = {
   children: JSX.Element[];
+  box?: boolean;
 };
 
-const Slider = ({ children }: Props) => {
+const Slider = ({ children, box }: Props) => {
   return (
-    <SliderContainer>
+    <SliderContainer box={box}>
       <Swiper
         className={"modalSwiper"}
         modules={[Navigation]}
@@ -23,21 +24,21 @@ const Slider = ({ children }: Props) => {
           prevEl: ".arrowLModal",
         }}
         style={{
-          width: "500px",
+          width: box ? "300px" : "500px",
         }}
       >
         {children.map((child, i) => (
           <SwiperSlide key={i}>{child}</SwiperSlide>
         ))}
       </Swiper>
-      <ArrowContainer>
-        <img  
+      <ArrowContainer box={box}>
+        <img
           style={{ cursor: "pointer" }}
           className="arrowLModal"
           src="arrow-l.png"
           width={76}
         />
-        <img  
+        <img
           style={{ cursor: "pointer" }}
           className="arrowRModal"
           src="arrow-r.png"

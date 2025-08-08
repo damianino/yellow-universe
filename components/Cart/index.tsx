@@ -11,6 +11,7 @@ import {
   Line,
   ModalContainer,
   OrderButton,
+  Selector,
   Ship,
   StyledInput,
   SuccessInput,
@@ -46,7 +47,7 @@ const initialFormState = {
   postalCode: "",
   comment: "",
   quantity: "",
-  // delivery: "russian_post",
+  size: "",
 };
 
 export const Cart = () => {
@@ -54,6 +55,7 @@ export const Cart = () => {
   const [submitted, setSubmitted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [size, setSize] = useState("M");
 
   const [form, setForm] = useState({
     name: "",
@@ -67,7 +69,7 @@ export const Cart = () => {
     postalCode: "",
     comment: "",
     quantity: "",
-    // delivery: "russian_post",
+    size: "",
   });
 
   const quantity = useCart((state) => state.quantity);
@@ -77,6 +79,10 @@ export const Cart = () => {
 
   const handleChange = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSize(e.target.value);
   };
 
   const handleSubmit = async () => {
@@ -93,6 +99,7 @@ export const Cart = () => {
         postalCode: form.postalCode,
         comment: form.comment || "",
         quantity: quantity,
+        size: size,
       });
 
       const requestOptions: RequestInit = {
@@ -152,6 +159,11 @@ export const Cart = () => {
               <TitleItem>товар</TitleItem>
               <SubTitle>mystery box</SubTitle>
             </Text>
+            <Selector value={size} onChange={handleSizeChange}>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </Selector>
             <Count>
               <Tap onClick={decrement}>−</Tap>
               <span>{quantity}</span>

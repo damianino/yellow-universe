@@ -9,7 +9,7 @@ export const ContainerItem = styled.div`
   z-index: 123;
 
   @media (max-width: 700px) {
-    padding: 15px;
+    padding: 10px;
     gap: 10px;
   }
   @media (max-width: 400px) {
@@ -47,6 +47,7 @@ export const TitleItem = styled.a`
 
   @media (max-width: 700px) {
     font-size: 12px;
+    display: none;
   }
 `;
 

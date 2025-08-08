@@ -232,7 +232,7 @@ export const Line = styled.div`
 
   @media (max-width: 700px) {
     left: 10px;
-    top: 35px;
+    top: 50px;
 
     img {
       width: 300px;
@@ -322,11 +322,11 @@ export const BackgroundImage = styled.img`
 
   @media (max-width: 700px) {
     width: 350px;
-    height: 760px;
+    height: 770px;
   }
   @media (max-width: 400px) {
     width: 310px;
-    height: 745px;
+    height: 755px;
   }
 `;
 
@@ -384,5 +384,20 @@ export const TgText = styled.div`
     :hover {
       color: #fff1a6;
     }
+  }
+`;
+
+export const Selector = styled.select`
+  padding: 4px 8px;
+  font-size: 16px;
+  z-index: 4;
+  color: white;
+  background-color: black;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
   }
 `;

@@ -48,7 +48,7 @@ export default function VimeoPlayer() {
     }
   };
 
-  const isFilm = false;
+  const isFilm = true;
 
   return (
     <VideoContainer ref={containerRef}>

@@ -17,6 +17,9 @@ import VimeoPlayer from "@/components/Video";
 import ArtifactCard from "@/components/Artifact";
 import Timer from "@/components/Timer";
 import { TimerButton, TimerContainer } from "@/components/Video/styles";
+import { InfoModal } from "@/components/InfoModal";
+import { useCart, useModalBoxStore, useModalStore } from "./store/cartStore";
+// import InfoModal from "@/components/InfoModal";
 
 const modalStyle = {
   content: {
@@ -44,11 +47,16 @@ const modalStyle = {
 export default function Home() {
   const loaded = useOnLoadImages();
   const [showLoader, setShowLoader] = useState(true);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isFilm, setIsFilm] = useState(
     typeof window !== "undefined"
       ? localStorage.getItem("isFilm") === "true"
       : false
   );
+
+  const isOpen = useModalBoxStore((state) => state.isInfoModalOpen);
+  const addToCart = useCart((state) => state.addToCart);
+  const openCartModal = useModalStore((state) => state.openModal);
 
   useEffect(() => {
     if (loaded) {
@@ -74,8 +82,17 @@ export default function Home() {
         </TimerButton>
       ) : (
         <>
+          <InfoModal
+            isOpen={isInfoModalOpen}
+            onClose={() => setIsInfoModalOpen(false)}
+            onBuy={() => {
+              setIsInfoModalOpen(false);
+              addToCart();
+              openCartModal();
+            }}
+          />
           <VimeoPlayer />
-          <ArtifactCard />
+          <ArtifactCard onOpenModal={() => setIsInfoModalOpen(true)} />
           <Header />
           <YellowUniverse />
           <WhoIsA />
