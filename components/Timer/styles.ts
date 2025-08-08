@@ -11,7 +11,8 @@ export const Container = styled.div`
 export const Frame = styled.div`
   img {
     @media (max-width: 700px) {
-      width: 280px;
+      width: 340px;
+      height: 200px;
     }
   }
 `;
@@ -19,32 +20,43 @@ export const Frame = styled.div`
 export const TimeDiv = styled.div`
   position: absolute;
   color: #ffe44c !important;
-  top: 155px;
+  top: 40%;
   width: 100%;
-  font-size: 78px;
+  font-size: 265px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
   font-family: "BlackNight";
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 160px;
   align-items: center;
 
   @media (max-width: 700px) {
-    font-size: 38px;
-    gap: 15px;
-    margin-top: 5px;
+    font-size: 80px;
+    gap: 38px;
+    top: 35%;
   }
 
-  span:nth-child(2) {
-    font-size: 70px;
+  /* span:nth-child(1) {
+    font-size: 170px;
     width: 6.3ch;
 
     @media (max-width: 700px) {
       font-size: 42px;
       letter-spacing: 5px;
       width: 8.6ch;
+    }
+  } */
+
+  span:nth-child(2) {
+    font-size: 205px;
+    width: 6.3ch;
+
+    @media (max-width: 700px) {
+      font-size: 70px;
+      letter-spacing: 5px;
+      width: 7.6ch;
     }
   }
 `;

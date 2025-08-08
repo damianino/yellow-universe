@@ -48,14 +48,13 @@ export default function Timer({ onEnd }: { onEnd: () => void }) {
   return (
     <Container>
       <Frame>
-        <img src="/time-frame.svg" width={582} height={361} alt="frame" />
+        <img src="/time-frame.svg" width={1082} height={661} alt="frame" />
         <TimeDiv>
           <span style={{ fontFamily: "Hvd" }}>{formatDays(timeLeft)}</span>
           <span
             style={{
               fontFamily: "BlackNight",
               textAlign: "right",
-              // width: "6.7ch",
             }}
           >
             {formatClock(timeLeft)}
