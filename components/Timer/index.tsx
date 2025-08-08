@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Container, Frame, TimeDiv } from "./styles";
-import Image from "next/image";
 
 export default function Timer({ onEnd }: { onEnd: () => void }) {
   const targetDate = new Date("2025-08-13T21:26:00").getTime();

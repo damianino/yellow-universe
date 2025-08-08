@@ -19,10 +19,10 @@ export const useOnLoadImages = () => {
 
     function incrementCounter() {
       counter++;
+      if (counter === len) {
 
-      if (counter >= len) {
-      
         setStatus(true);
+
       }
     }
   }, []);
@@ -43,7 +43,9 @@ export const OnLoadImagesNonHook = (callback: () => void) => {
   function incrementCounter() {
     counter++;
     if (counter === len) {
+
       callback();
+      
     }
   }
 };
