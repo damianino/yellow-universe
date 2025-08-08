@@ -14,12 +14,7 @@ const ArtifactCard = () => {
     <Container>
       <img src="box.jpg" alt="Chromnesia Box Set" />
       <Button onClick={handleBuy}>
-        <img
-          src="boxbutton.png"
-          alt="Chromnesia Box Set"
-          // style={{ zIndex: "2" }}
-          className="default"
-        />
+        <img src="boxbutton.png" alt="Chromnesia Box Set" className="default" />
         <img
           className="hover"
           src="boxbuttonhover.png"

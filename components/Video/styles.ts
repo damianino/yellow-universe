@@ -55,7 +55,7 @@ export const CustomPlayButton = styled.button.withConfig({
 
 export const TimerButton = styled.button`
   position: absolute;
-  top: 36%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;

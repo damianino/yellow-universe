@@ -55,20 +55,14 @@ export default function VimeoPlayer() {
       {!isPlaying && (
         <>
           <Thumbnail></Thumbnail>
-          {isFilm ? (
-            <CustomPlayButton
-              film={isFilm}
-              onClick={isFilm ? togglePlay : () => {}}
-            >
-              <Play src="/play.svg" alt="play" />
-            </CustomPlayButton>
-          ) : (
-            <TimerButton>
-              <TimerContainer>
-                <Timer />
-              </TimerContainer>
-            </TimerButton>
-          )}
+          {/* {isFilm ? ( */}
+          <CustomPlayButton
+            film={isFilm}
+            onClick={isFilm ? togglePlay : () => {}}
+          >
+            <Play src="/play.svg" alt="play" />
+          </CustomPlayButton>
+
           <Title src="/Chromnesia-2.png" alt="Логотип" />
           <Info>
             <Roles>

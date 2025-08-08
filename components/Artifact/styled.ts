@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin: 100px 100px 0px;
 
   img {
-    width: 550px;
+    width: 700px;
   }
 
   @media (max-width: 700px) {
@@ -42,7 +42,7 @@ export const Button = styled.button`
   .hover {
     width: 950px;
     height: 600px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 10px;
     opacity: 0;
     pointer-events: none;
@@ -59,11 +59,13 @@ export const Button = styled.button`
   }
 
   .default {
-    width: 150px;
+    margin-top: -14px;
+    width: 140px;
     z-index: 1;
 
     @media (max-width: 700px) {
       width: 110px;
+      margin-top: -24px;
     }
   }
 

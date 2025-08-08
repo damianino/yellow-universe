@@ -16,6 +16,7 @@ import { Cart } from "@/components/Cart";
 import VimeoPlayer from "@/components/Video";
 import ArtifactCard from "@/components/Artifact";
 import Timer from "@/components/Timer";
+import { TimerButton, TimerContainer } from "@/components/Video/styles";
 
 const modalStyle = {
   content: {
@@ -43,6 +44,11 @@ const modalStyle = {
 export default function Home() {
   const loaded = useOnLoadImages();
   const [showLoader, setShowLoader] = useState(true);
+  const [isFilm, setIsFilm] = useState(
+    typeof window !== "undefined"
+      ? localStorage.getItem("isFilm") === "true"
+      : false
+  );
 
   useEffect(() => {
     if (loaded) {
@@ -50,19 +56,35 @@ export default function Home() {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    const value = localStorage.getItem("isFilm");
+    if (value === "true") {
+      setIsFilm(true);
+    }
+  }, [isFilm]);
+
   return (
     <main className={styles.main}>
       {showLoader && <Loader />}
-      <VimeoPlayer />
-      <ArtifactCard />
-      <Header />
-      <YellowUniverse />
-      <WhoIsA />
-      <Timeline />
-      <StayInTouch />
-      {/* <Artifacts /> */}
-      <Footer />
-      <Cart />
+      {!isFilm ? (
+        <TimerButton>
+          <TimerContainer>
+            <Timer onEnd={() => setIsFilm(true)} />
+          </TimerContainer>
+        </TimerButton>
+      ) : (
+        <>
+          <VimeoPlayer />
+          <ArtifactCard />
+          <Header />
+          <YellowUniverse />
+          <WhoIsA />
+          <Timeline />
+          <StayInTouch />
+          <Footer />
+          <Cart />
+        </>
+      )}
     </main>
   );
 }

@@ -25,7 +25,6 @@ export const useModal = (): Res => {
       onClose?: () => void,
       containerStyle?: CSSProperties
     ) => {
-      console.log("oncloseopenModal", children);
       onClose && setOnClose(onClose);
       containerStyle && setContainerStyle(containerStyle);
 
@@ -40,7 +39,6 @@ export const useModal = (): Res => {
       <Modal
         isOpen={isOpen}
         onClose={() => {
-          console.log("onclose", onClose);
           // onClose()
           setChildren(null);
           setIsOpen(false);

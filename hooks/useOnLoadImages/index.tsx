@@ -19,8 +19,9 @@ export const useOnLoadImages = () => {
 
     function incrementCounter() {
       counter++;
+
       if (counter >= len) {
-        console.log("All images loaded!");
+      
         setStatus(true);
       }
     }
@@ -30,7 +31,6 @@ export const useOnLoadImages = () => {
 };
 
 export const OnLoadImagesNonHook = (callback: () => void) => {
-  console.log("checking");
   var imgs = document.images,
     len = imgs.length,
     counter = 0;
@@ -43,7 +43,6 @@ export const OnLoadImagesNonHook = (callback: () => void) => {
   function incrementCounter() {
     counter++;
     if (counter === len) {
-      console.log("All images loaded!");
       callback();
     }
   }
