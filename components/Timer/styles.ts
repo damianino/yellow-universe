@@ -39,10 +39,12 @@ export const TimeDiv = styled.div`
 
   span:nth-child(2) {
     font-size: 70px;
+    width: 6.3ch;
 
     @media (max-width: 700px) {
       font-size: 42px;
       letter-spacing: 5px;
+      width: 8.6ch;
     }
   }
 `;

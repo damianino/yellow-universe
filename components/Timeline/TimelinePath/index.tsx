@@ -202,8 +202,6 @@ const TimelinePath = ({
     setSelected(filmCardsMock.length - i - 1);
   }, []);
 
-console.log("ticksData", ticksData)
-
   return (
     <Wrapper ref={wrapperRef}>
       <div ref={svgWrapperRef}>
@@ -269,7 +267,9 @@ console.log("ticksData", ticksData)
                   textAnchor="middle"
                   dominantBaseline="middle"
                 >
-                  {filmCardsMock[filmCardsMock.length - i - 1].available ? filmCardsMock.length - i  : "?"} 
+                  {filmCardsMock[filmCardsMock.length - i - 1].available
+                    ? filmCardsMock.length - i
+                    : "?"}
                   {/* 1 */}
                 </text>
               </>

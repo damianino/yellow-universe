@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Container, Frame, TimeDiv } from "./styles";
 import Image from "next/image";
 
-export default function Timer() {
-  const targetDate = new Date("2025-08-20T20:00:00").getTime();
+export default function Timer({ onEnd }: { onEnd: () => void }) {
+  const targetDate = new Date("2025-08-08T04:30:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
 
@@ -13,11 +13,20 @@ export default function Timer() {
     const interval = setInterval(() => {
       const now = Date.now();
       const diff = targetDate - now;
-      setTimeLeft(diff > 0 ? diff : 0);
+
+      if (diff <= 0) {
+        setTimeLeft(0);
+        localStorage.setItem("isFilm", "true");
+        clearInterval(interval);
+        onEnd();
+      } else {
+        setTimeLeft(diff);
+        localStorage.setItem("isFilm", "false");
+      }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, [targetDate, onEnd]);
 
   const formatDays = (ms: number) => {
     const days = Math.floor(ms / (1000 * 60 * 60 * 24));
@@ -37,8 +46,6 @@ export default function Timer() {
     return `${hours}:${minutes}:${seconds}`;
   };
 
-  const pad = (n: number) => n.toString().padStart(2, "0");
-
   return (
     <Container>
       <Frame>
@@ -49,7 +56,7 @@ export default function Timer() {
             style={{
               fontFamily: "BlackNight",
               textAlign: "right",
-              width: "6.7ch",
+              // width: "6.7ch",
             }}
           >
             {formatClock(timeLeft)}
