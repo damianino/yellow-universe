@@ -61,7 +61,7 @@ export const TimerButton = styled.button`
   z-index: 2;
 
   @media (max-width: 700px) {
-    top: 230px;
+    top: 45%;
     padding: 10px;
     padding-left: 12px;
     width: 100%;
