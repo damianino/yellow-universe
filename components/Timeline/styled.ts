@@ -67,6 +67,23 @@ export const TextVideoContainer = styled.div`
   white-space: pre-wrap;
   text-align: justify;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 500px) {
+    width: calc(100% - 40px);
+    font-size: 12px;
+  }
+`;
+
+export const LinkContainer = styled.a`
+  width: 48%;
+  padding-top: 10px;
+  color: #e3d641;
+  font-family: "Bookman Old Style", Georgia, serif;
+  white-space: pre-wrap;
+  text-align: justify;
+  font-size: 16px;
 
   @media (max-width: 500px) {
     width: calc(100% - 40px);

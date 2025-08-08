@@ -20,16 +20,19 @@ Through the screeching horror and the headache-inducing dread, I could only imag
 The fake driver took me toward the border. I counted the posts. My Solange could no longer hold me.
     
 The border. 
-Where will I end up next?`,   
+Where will I end up next?`,
     available: true,
     video: "https://vimeo.com/740451944",
   },
   {
-    name: "? ? ?",
-    titleImg: "",
+    name: "3. CHROMENESIA",
+    titleImg: "dd.png",
     img: [],
-    text: `bla bla bla bla`,
-    available: false,
+    text: `A chapter where the road through a foreign land becomes a road inward: a chance encounter with a nameless driver turns into a quiet revelation, and the night ride becomes a wanderer’s confession.`,
+    available: true,
+    video: "https://vimeo.com/1106208762?share=copy",
+    link: "https://t.me/randombedroom/3022",
+    linkText: "Listen to the full conversation.",
   },
   {
     name: "? ? ?",

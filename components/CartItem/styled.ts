@@ -26,6 +26,11 @@ export const ImageContainer = styled.div`
   }
 `;
 
+export const BoxImg = styled.img`
+  width: 60px;
+  height: 60px;
+`;
+
 export const Text = styled.div`
   flex-direction: column;
   justify-content: center;
@@ -38,13 +43,15 @@ export const Text = styled.div`
 `;
 
 export const TitleItem = styled.a`
+  font-size: 14px;
+
   @media (max-width: 700px) {
     font-size: 12px;
   }
 `;
 
 export const SubTitle = styled.div`
-  font-size: 12px;
+  font-size: 16px;
   display: flex;
 
   @media (max-width: 700px) {
@@ -70,7 +77,7 @@ export const Count = styled.div`
 `;
 
 export const Tap = styled.div`
- font-size: 18px;
+  font-size: 18px;
   cursor: pointer;
   padding: 10px;
   width: 10px;

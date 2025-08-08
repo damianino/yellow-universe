@@ -6,7 +6,6 @@ import {
   Icon,
   Info,
   Name,
-  OverlayText,
   Play,
   Role,
   Roles,
@@ -49,7 +48,7 @@ export default function VimeoPlayer() {
     }
   };
 
-  const isFilm = true;
+  const isFilm = false;
 
   return (
     <VideoContainer ref={containerRef}>
@@ -81,7 +80,7 @@ export default function VimeoPlayer() {
                 <Name>Giorgi Kurashvili</Name>
                 <As>as stranger</As>
               </Role>
-              <div style={{ flexBasis: '100%', height: '0' }} />
+              <div style={{ flexBasis: "100%", height: "0" }} />
               <Role>
                 <As>director</As>
                 <Name>Artyom Shalak</Name>

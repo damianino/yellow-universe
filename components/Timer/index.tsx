@@ -5,7 +5,7 @@ import { Container, Frame, TimeDiv } from "./styles";
 import Image from "next/image";
 
 export default function Timer() {
-  const targetDate = new Date("2025-07-03T20:00:00").getTime();
+  const targetDate = new Date("2025-08-20T20:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
 
