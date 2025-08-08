@@ -6,7 +6,7 @@ export const useOnLoadImages = () => {
 
   useEffect(() => {
     var imgs = document.images,
-      len = imgs.length,
+      len = imgs.length/2,
       counter = 0;
 
     [].forEach.call(imgs, function (img: HTMLImageElement) {
@@ -19,7 +19,9 @@ export const useOnLoadImages = () => {
 
     function incrementCounter() {
       counter++;
-      if (counter === len) {
+
+      if (counter >= len) {
+      
         setStatus(true);
       }
     }
