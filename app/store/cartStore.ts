@@ -30,3 +30,19 @@ export const useModalStore = create<ModalStore>((set) => ({
   openModal: () => set({ isOpen: true }),
   closeModal: () => set({ isOpen: false }),
 }));
+
+interface ModalBoxStore {
+  isCartOpen: boolean;
+  isInfoModalOpen: boolean;
+  openCartModal: () => void;
+  openInfoModal: () => void;
+  closeModal: () => void;
+}
+
+export const useModalBoxStore = create<ModalBoxStore>((set) => ({
+  isCartOpen: false,
+  isInfoModalOpen: false,
+  openCartModal: () => set({ isCartOpen: true }),
+  openInfoModal: () => set({ isInfoModalOpen: true }),
+  closeModal: () => set({ isCartOpen: false, isInfoModalOpen: false }),
+}));

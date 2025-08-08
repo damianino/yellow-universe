@@ -40,17 +40,16 @@ export const Button = styled.button`
   }
 
   .hover {
-    width: 950px;
-    height: 600px;
-    margin-top: 5px;
+    width: 780px;
+    height: 480px;
     margin-left: 10px;
     opacity: 0;
     pointer-events: none;
 
     @media (max-width: 700px) {
-      width: 700px;
-      height: 460px;
-      margin-top: 15px;
+      width: 640px;
+      height: 370px;
+      margin-top: -15px;
     }
   }
 
