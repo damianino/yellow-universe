@@ -8,6 +8,7 @@ import {
   Credits,
   CreditsBtn,
   ImageContainer,
+  LinkContainer,
   SliderContainer,
   TextContainer,
   TextVideoContainer,
@@ -108,13 +109,13 @@ const Timeline = () => {
               </SliderContainer>
             ) : (
               <div
-                // style={{
-                //   height: "330px",
-                //   width: "330px",
-                //   display: "flex",
-                //   alignItems: "center",
-                //   justifyContent: "center",
-                // }}
+              // style={{
+              //   height: "330px",
+              //   width: "330px",
+              //   display: "flex",
+              //   alignItems: "center",
+              //   justifyContent: "center",
+              // }}
               >
                 <span></span>
               </div>
@@ -158,6 +159,15 @@ const Timeline = () => {
             {filmCardsMock[selected].available
               ? filmCardsMock[selected].text
               : ""}
+            {filmCardsMock[selected].available &&
+              filmCardsMock[selected].linkText && (
+                <LinkContainer
+                  target="_blank"
+                  href={filmCardsMock[selected].link}
+                >
+                  {filmCardsMock[selected].linkText}
+                </LinkContainer>
+              )}
           </TextVideoContainer>
         </ChapterContainer>
       )}

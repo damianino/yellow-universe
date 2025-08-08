@@ -23,7 +23,6 @@ export const useOnLoadImages = () => {
         console.log("All images loaded!");
         setStatus(true);
       }
-      console.log("counter", counter);
     }
   }, []);
 
