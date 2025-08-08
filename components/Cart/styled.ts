@@ -227,7 +227,7 @@ export const Ship = styled.div`
 
 export const Line = styled.div`
   position: absolute;
-  top: 33px;
+  top: 40px;
   left: 0px;
 
   @media (max-width: 700px) {

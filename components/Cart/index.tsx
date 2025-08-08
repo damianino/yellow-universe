@@ -24,6 +24,7 @@ import Modal from "../Modal";
 import { useCart, useModalStore } from "@/app/store/cartStore";
 
 import {
+  BoxImg,
   ContainerItem,
   Count,
   Price,
@@ -146,9 +147,10 @@ export const Cart = () => {
           />
           <Title>Ваш заказ</Title>
           <ContainerItem>
+            <BoxImg src="box.jpg"></BoxImg>
             <Text>
               <TitleItem>товар</TitleItem>
-              <SubTitle>Мистери бокс</SubTitle>
+              <SubTitle>mystery box</SubTitle>
             </Text>
             <Count>
               <Tap onClick={decrement}>−</Tap>
