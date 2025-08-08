@@ -45,7 +45,7 @@ export const OnLoadImagesNonHook = (callback: () => void) => {
     if (counter === len) {
 
       callback();
-      
+
     }
   }
-};
+}; 
