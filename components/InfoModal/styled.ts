@@ -15,7 +15,7 @@ export const Modal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff6e;
+  /* background: #ffffff6e; */
   /* border-radius: 16px; */
   padding: 32px;
   width: 90%;
@@ -34,7 +34,7 @@ export const Title = styled.h2`
   margin: 0 0 16px;
   font-size: 24px;
   text-align: center;
-  color: #000;
+  color: #fff;
 `;
 
 export const Slider = styled.div`
@@ -85,7 +85,7 @@ export const CloseButton = styled.button`
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #000;
+  color: rgb(227, 214, 65);
 
   &:hover {
     color: #888;
