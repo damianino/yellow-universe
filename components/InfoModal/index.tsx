@@ -21,7 +21,7 @@ export const InfoModal = ({
   if (!isOpen) return null;
 
   const handleOverlayClick = () => {
-    onClose();
+    onClose(); 
   };
 
   const handleModalClick = (e: React.MouseEvent) => {
