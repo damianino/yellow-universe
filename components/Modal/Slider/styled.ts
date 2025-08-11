@@ -30,6 +30,7 @@ export const SliderContainer = styled.div.withConfig({
     display: flex;
     justify-content: center;
     align-items: center;
-    height: ${(props) => (props.box ? "500px" : "80vh")};
+    position: relative;
+    height: ${(props) => (props.box ? "450px" : "80vh")};
 `
 
