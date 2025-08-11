@@ -1,11 +1,13 @@
 import Slider from "../Modal/Slider";
 import { CloseModalBtn } from "../Modal/styled";
 import {
+  Box,
   BuyButton,
   CloseButton,
   Description,
   Modal,
   Overlay,
+  Text,
   Title,
 } from "./styled";
 
@@ -21,7 +23,7 @@ export const InfoModal = ({
   if (!isOpen) return null;
 
   const handleOverlayClick = () => {
-    onClose();  
+    onClose();
   };
 
   const handleModalClick = (e: React.MouseEvent) => {
@@ -34,20 +36,35 @@ export const InfoModal = ({
         {/* <CloseButton onClick={onClose}>×</CloseButton> */}
         <CloseModalBtn src="close-btn.png" onClick={onClose} />
         {/* <Title>Chromnesia Box Set</Title> */}
+        <Box>
+          <Slider box>
+            <img width={300} src="/box/9.jpg" alt="Slide 1" />
+            <img width={300} src="/box/1.jpg" alt="Slide 2" />
+            <img width={300} src="/box/2.jpg" alt="Slide 3" />
+            <img width={300} src="/box/3.jpg" alt="Slide 3" />
+            <img width={300} src="/box/4.jpg" alt="Slide 3" />
+            <img width={300} src="/box/5.jpg" alt="Slide 3" />
+            <img width={300} src="/box/6.jpg" alt="Slide 3" />
+            <img width={300} src="/box/7.jpg" alt="Slide 3" />
+            <img width={300} src="/box/8.jpg" alt="Slide 3" />
+          </Slider>
 
-        <Slider box>
-          <img width={300} src="/box/9.jpg" alt="Slide 1" />
-          <img width={300} src="/box/1.jpg" alt="Slide 2" />
-          <img width={300} src="/box/2.jpg" alt="Slide 3" />
-          <img width={300} src="/box/3.jpg" alt="Slide 3" />
-          <img width={300} src="/box/4.jpg" alt="Slide 3" />
-          <img width={300} src="/box/5.jpg" alt="Slide 3" />
-          <img width={300} src="/box/6.jpg" alt="Slide 3" />
-          <img width={300} src="/box/7.jpg" alt="Slide 3" />
-          <img width={300} src="/box/8.jpg" alt="Slide 3" />
-        </Slider>
-
-        {/* <Description>Описание</Description> */}
+          <Description>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <div>- Chromnesia Box Set</div>
+            <Text>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+              repudiandae veniam inventore. Consequatur illum, excepturi dolorem
+              quae culpa nam numquam blanditiis a, ad quis tempora laboriosam
+              dolore mollitia harum incidunt!
+            </Text>
+          </Description>
+        </Box>
         <BuyButton src="boxbutton.png" onClick={onBuy}></BuyButton>
       </Modal>
     </Overlay>

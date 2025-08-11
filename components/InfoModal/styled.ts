@@ -15,18 +15,29 @@ export const Modal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background: #ffffff6e; */
-  /* border-radius: 16px; */
+  background: black;
   padding: 32px;
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
+  color: white;
+  overflow: visible;
 
   @media (max-width: 700px) {
     /* margin: 0 20px; */
+  }
+`;
+
+export const Box = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 70px;
+
+  @media (max-width: 700px) {
+    display: block;
   }
 `;
 
@@ -52,11 +63,21 @@ export const Slider = styled.div`
 `;
 
 export const Description = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
-  color: #222;
+  /* color: #222; */
   text-align: center;
-  margin: 16px 0;
+  margin: 0 0 16px 0;
+  text-align: justify;
+`;
+
+export const Text = styled.p`
+  font-size: 12px;
+  line-height: 1.5;
+  /* color: #222; */
+  text-align: center;
+  margin: 10px 0 0px 0;
+  text-align: justify;
 `;
 
 export const BuyButton = styled.img`
