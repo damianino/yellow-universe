@@ -8,6 +8,7 @@ export const Overlay = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
+  overflow: auto;
 `;
 
 export const Modal = styled.div`
@@ -82,7 +83,7 @@ export const Text = styled.p`
 
 export const BuyButton = styled.img`
   display: block;
-  margin: 0 auto;
+  margin: 0px auto;
   /* padding: 14px 28px; */
   /* background-color: #000; */
   /* color: #fff; */
