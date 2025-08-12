@@ -68,8 +68,17 @@ export const Description = styled.p`
   line-height: 1.5;
   /* color: #222; */
   text-align: center;
-  margin: 0 0 16px 0;
+  margin: 0;
   text-align: justify;
+
+  div span {
+    font-weight: bold;
+  }
+
+  @media (max-width: 700px) {
+    display: block;
+    margin: 0 0 16px 0;
+  }
 `;
 
 export const Text = styled.p`
@@ -79,6 +88,12 @@ export const Text = styled.p`
   text-align: center;
   margin: 10px 0 0px 0;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-weight: bold;
+  }
 `;
 
 export const BuyButton = styled.img`

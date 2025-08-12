@@ -55,7 +55,7 @@ export default function VimeoPlayer() {
       {!isPlaying && (
         <>
           <Thumbnail></Thumbnail>
-          {/* {isFilm ? ( */}
+
           <CustomPlayButton
             film={isFilm}
             onClick={isFilm ? togglePlay : () => {}}
@@ -172,7 +172,7 @@ export default function VimeoPlayer() {
 
       <ReactPlayer
         ref={playerRef}
-        url="https://vimeo.com/1098983331"
+        url="https://vimeo.com/932370471?share=copy"
         playing={isPlaying}
         controls={true}
         width="100%"

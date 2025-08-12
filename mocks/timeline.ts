@@ -72,13 +72,9 @@ Where will I end up next?`,
     name: "9. CHROMENESIA",
     titleImg: "chromnesia.png",
     img: ["9.jpeg", "IMG_6688.JPG"],
-    text: `This short film is the midpoint of the main character's story, which you are about to experience. 
+    text: `This short film is just one episode in the life of Yellow, a character from the Welcome Chrome narrative.
 
-He lost his home and loved ones as a child, and later his people were expelled from their native lands. Now our hero is forced to wander in search of shelter. You don't know him, he's not from our planet - he's Yellow. Exhausted by kilometers, lost in space, he is approaching the main realization of his yellow life - his home has always been, is and will always be inside him.
-
-But here and there, suffering from constant chills and caustic memories, he will have to trust a stranger. And only after seeing this stranger's inner tragedy, Yellow will be able to temporarily forget about the nightmares inside himself.
-
-Could you push aside fear and look into the uncomfortable soul of a person?`,
+    It’s less about the plot than it is about the feeling — what it’s like to be alone in a boundless, frightening world. And to wonder if there’s still anyone left you can trust.`,
     available: true,
     credits: `CAST
 Yellow: Artyom Shalak

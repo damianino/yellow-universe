@@ -104,6 +104,9 @@ export const Thumbnail = styled.div`
   }
 
   @media (max-width: 700px) {
+    right: -34px;
+    top: -5px;
+    width: 110%;
   }
 `;
 
