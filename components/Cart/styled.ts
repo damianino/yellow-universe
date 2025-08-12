@@ -232,7 +232,7 @@ export const Line = styled.div`
 
   @media (max-width: 700px) {
     left: 10px;
-    top: 50px;
+    top: 45px;
 
     img {
       width: 300px;
@@ -396,6 +396,8 @@ export const Selector = styled.select`
   border: none;
   margin-left: auto;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 10px;
 
   @media (max-width: 700px) {
     font-size: 12px;

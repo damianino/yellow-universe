@@ -19,7 +19,6 @@ import Timer from "@/components/Timer";
 import { TimerButton, TimerContainer } from "@/components/Video/styles";
 import { InfoModal } from "@/components/InfoModal";
 import { useCart, useModalBoxStore, useModalStore } from "./store/cartStore";
-// import InfoModal from "@/components/InfoModal";
 
 const modalStyle = {
   content: {

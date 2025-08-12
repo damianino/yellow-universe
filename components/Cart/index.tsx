@@ -11,7 +11,6 @@ import {
   Line,
   ModalContainer,
   OrderButton,
-  Selector,
   Ship,
   StyledInput,
   SuccessInput,
@@ -99,7 +98,7 @@ export const Cart = () => {
         postalCode: form.postalCode,
         comment: form.comment || "",
         quantity: quantity,
-        size: size,
+        size: localStorage.getItem("size"),
       });
 
       const requestOptions: RequestInit = {
@@ -159,11 +158,11 @@ export const Cart = () => {
               <TitleItem>товар</TitleItem>
               <SubTitle>mystery box</SubTitle>
             </Text>
-            <Selector value={size} onChange={handleSizeChange}>
+            {/* <Selector value={size} onChange={handleSizeChange}>
               <option value="M">M</option>
               <option value="L">L</option>
               <option value="XL">XL</option>
-            </Selector>
+            </Selector> */}
             <Count>
               <Tap onClick={decrement}>−</Tap>
               <span>{quantity}</span>
