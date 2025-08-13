@@ -71,6 +71,9 @@ export const Description = styled.p`
   margin: 0;
   text-align: justify;
 
+  div {
+    margin-block: 4px;
+  }
   div span {
     font-weight: bold;
   }

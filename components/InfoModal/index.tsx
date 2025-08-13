@@ -86,7 +86,7 @@ export const InfoModal = ({
               by the director. <span>All sales are final.</span>
             </Text>
             <div>
-              Размер
+              Size
               <Selector value={size} onChange={handleSizeChange}>
                 <option value="M">M</option>
                 <option value="L">L</option>
