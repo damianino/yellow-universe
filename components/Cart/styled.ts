@@ -122,10 +122,21 @@ export const Total = styled.div`
   font-size: 16px;
   font-weight: 600;
   text-align: right;
-  margin-block: 20px;
+  margin-top: 20px;
 
   @media (max-width: 700px) {
     font-size: 12px;
+  }
+`;
+
+export const Shipping = styled.div`
+  font-size: 12px;
+  /* font-weight: 600; */
+  text-align: right;
+  margin-block: 5px;
+
+  @media (max-width: 700px) {
+    font-size: 10px;
   }
 `;
 
@@ -241,7 +252,7 @@ export const Line = styled.div`
   }
   @media (max-width: 400px) {
     left: 6px;
-    top: 30px;
+    top: 43px;
 
     img {
       width: 273px;
@@ -326,7 +337,7 @@ export const BackgroundImage = styled.img`
   }
   @media (max-width: 400px) {
     width: 310px;
-    height: 755px;
+    height: 770px;
   }
 `;
 

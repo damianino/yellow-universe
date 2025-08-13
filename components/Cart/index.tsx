@@ -12,6 +12,7 @@ import {
   ModalContainer,
   OrderButton,
   Ship,
+  Shipping,
   StyledInput,
   SuccessInput,
   Sum,
@@ -168,7 +169,7 @@ export const Cart = () => {
               <span>{quantity}</span>
               <Tap onClick={increment}>+</Tap>
             </Count>
-            <Price>600 руб</Price>
+            <Price>75 $</Price>
             <Line>
               <img
                 src={"/cart/line-1.png"}
@@ -179,7 +180,7 @@ export const Cart = () => {
             </Line>
           </ContainerItem>
 
-          <Sum>Subtotal: {quantity * 600}</Sum>
+          <Sum>Subtotal: {quantity * 75} $</Sum>
 
           <InputWrapper>
             <BackgroundInput
@@ -350,7 +351,8 @@ export const Cart = () => {
             />
           </InputWrapper>
 
-          <Total>Total: {quantity * 600}</Total>
+          <Total>Total: {quantity * 75} $</Total>
+          <Shipping> + shipping fee according to your location</Shipping>
           <ButtonWrapper>
             <BackgroundInput
               src="/cart/button.png"

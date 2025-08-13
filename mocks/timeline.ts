@@ -74,7 +74,7 @@ Where will I end up next?`,
     img: ["9.jpeg", "IMG_6688.JPG"],
     text: `This short film is just one episode in the life of Yellow, a character from the Welcome Chrome narrative.
 
-    It’s less about the plot than it is about the feeling — what it’s like to be alone in a boundless, frightening world. And to wonder if there’s still anyone left you can trust.`,
+It’s less about the plot than it is about the feeling — what it’s like to be alone in a boundless, frightening world. And to wonder if there’s still anyone left you can trust.`,
     available: true,
     credits: `CAST
 Yellow: Artyom Shalak
