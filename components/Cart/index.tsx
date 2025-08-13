@@ -152,12 +152,12 @@ export const Cart = () => {
             width={590}
             height={1085}
           />
-          <Title>Ваш заказ</Title>
+          <Title>Your order</Title>
           <ContainerItem>
             <BoxImg src="box.jpg"></BoxImg>
             <Text>
-              <TitleItem>товар</TitleItem>
-              <SubTitle>mystery box</SubTitle>
+              <TitleItem>item</TitleItem>
+              <SubTitle>CHROMNESIA Bundle</SubTitle>
             </Text>
             {/* <Selector value={size} onChange={handleSizeChange}>
               <option value="M">M</option>
@@ -169,7 +169,7 @@ export const Cart = () => {
               <span>{quantity}</span>
               <Tap onClick={increment}>+</Tap>
             </Count>
-            <Price>75 $</Price>
+            <Price>75$</Price>
             <Line>
               <img
                 src={"/cart/line-1.png"}
@@ -192,7 +192,7 @@ export const Cart = () => {
             <StyledInput
               value={form.name}
               onChange={(e) => handleChange("name", e.target.value)}
-              placeholder="Имя"
+              placeholder="Name"
               required
             />
           </InputWrapper>
@@ -219,7 +219,7 @@ export const Cart = () => {
             <StyledInput
               value={form.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
-              placeholder="Телефон"
+              placeholder="Phone"
             />
           </InputWrapper>
           <InputWrapper>
@@ -236,11 +236,11 @@ export const Cart = () => {
             />
           </InputWrapper>
           <TgText>
-            Если Вам нельзя отправить сообщение в телеграмме, напишите{" "}
+            if we can't send a message in telegram, write{" "}
             <a target="_blank" href="https://t.me/shterntm">
-              сюда
+              here{" "}
             </a>
-            , чтобы узнать детали оплаты
+            to find out the payment details
           </TgText>
 
           <Delivery>Delivery</Delivery>
@@ -254,7 +254,7 @@ export const Cart = () => {
             <StyledInput
               value={form.fullName}
               onChange={(e) => handleChange("fullName", e.target.value)}
-              placeholder="Полное имя"
+              placeholder="Full name"
             />
           </InputWrapper>
           {/* <RadioContainer>
@@ -288,7 +288,7 @@ export const Cart = () => {
                 height={65}
               />
               <StyledInput
-                placeholder="Страна"
+                placeholder="Country"
                 value={form.country}
                 onChange={(e) => handleChange("country", e.target.value)}
               />
@@ -301,7 +301,7 @@ export const Cart = () => {
                 height={65}
               />
               <StyledInput
-                placeholder="Город"
+                placeholder="City"
                 value={form.city}
                 onChange={(e) => handleChange("city", e.target.value)}
               />
@@ -317,7 +317,7 @@ export const Cart = () => {
                 height={65}
               />
               <StyledInput
-                placeholder="Адрес"
+                placeholder="Address"
                 value={form.address}
                 onChange={(e) => handleChange("address", e.target.value)}
               />
@@ -330,7 +330,7 @@ export const Cart = () => {
                 height={65}
               />
               <StyledInput
-                placeholder="Индекс"
+                placeholder="Postal code"
                 value={form.postalCode}
                 onChange={(e) => handleChange("postalCode", e.target.value)}
               />
@@ -347,7 +347,7 @@ export const Cart = () => {
             <StyledInput
               value={form.comment}
               onChange={(e) => handleChange("comment", e.target.value)}
-              placeholder="Комментарий"
+              placeholder="Comment"
             />
           </InputWrapper>
 
@@ -360,7 +360,7 @@ export const Cart = () => {
               width={530}
               height={80}
             />
-            <OrderButton onClick={handleSubmit}>оформить заказ</OrderButton>
+            <OrderButton onClick={handleSubmit}>order</OrderButton>
           </ButtonWrapper>
         </ModalContainer>
       </Modal>
@@ -373,7 +373,7 @@ export const Cart = () => {
               width={590}
               height={65}
             />
-            <h5>Заказ успешно отправлен. Скоро с вами свяжутся!</h5>
+            <h5>Order successfully sent. You will be contacted soon!</h5>
             <button onClick={() => setShowSuccess(false)}></button>
           </ModalContainer>
         </Modal>
@@ -388,7 +388,7 @@ export const Cart = () => {
               width={590}
               height={65}
             />
-            <h5>Что-то пошло не так, попробуйте еще раз</h5>
+            <h5>Something went wrong, please try again</h5>
             <button onClick={() => setShowError(false)}></button>
           </ModalContainer>
         </Modal>

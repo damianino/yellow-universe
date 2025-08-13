@@ -80,13 +80,18 @@ export const Count = styled.div`
 export const Tap = styled.div`
   font-size: 18px;
   cursor: pointer;
-  padding: 10px;
+  padding: 6px;
   width: 10px;
   height: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+
+  @media (max-width: 400px) {
+   padding: 5px;
+   font-size: 14px;
+  }
 `;
 
 export const Price = styled.div`
