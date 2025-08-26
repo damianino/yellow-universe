@@ -11,7 +11,7 @@ import WhoIsA from "@/components/WhoISA";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 import { useOnLoadImages } from "@/hooks/useOnLoadImages";
-
+import { Analytics } from "@vercel/analytics/next";
 import { Cart } from "@/components/Cart";
 import VimeoPlayer from "@/components/Video";
 import ArtifactCard from "@/components/Artifact";
@@ -73,34 +73,25 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {showLoader && <Loader />}
-      {!isFilm ? (
-        <TimerButton>
-          <TimerContainer>
-            <Timer onEnd={() => setIsFilm(true)} />
-          </TimerContainer>
-        </TimerButton>
-      ) : (
-        <>
-          <InfoModal
-            isOpen={isInfoModalOpen}
-            onClose={() => setIsInfoModalOpen(false)}
-            onBuy={() => {
-              setIsInfoModalOpen(false);
-              addToCart();
-              openCartModal();
-            }}
-          />
-          <VimeoPlayer />
-          <ArtifactCard onOpenModal={() => setIsInfoModalOpen(true)} />
-          <Header />
-          <YellowUniverse />
-          <WhoIsA />
-          <Timeline />
-          <StayInTouch />
-          <Footer />
-          <Cart />
-        </>
-      )}
+      <InfoModal
+        isOpen={isInfoModalOpen}
+        onClose={() => setIsInfoModalOpen(false)}
+        onBuy={() => {
+          setIsInfoModalOpen(false);
+          addToCart();
+          openCartModal();
+        }}
+      />
+      <VimeoPlayer />
+      <ArtifactCard onOpenModal={() => setIsInfoModalOpen(true)} />
+      <Header />
+      <YellowUniverse />
+      <WhoIsA />
+      <Timeline />
+      <StayInTouch />
+      <Footer />
+      <Cart />
+      <Analytics />
     </main>
   );
 }
